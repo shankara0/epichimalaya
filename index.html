@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Epic Himalaya &amp; Trek Landing Page</title>
+  <!-- Custom Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Rubik+Wet+Paint&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Alpine.js for dynamic menu -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+
+<!-- Header Section -->
+<header x-data="{ open: false }" class="site-header fixed w-full z-50 shadow-md">
+  <div class="container mx-auto px-4 py-2 flex flex-col md:flex-row items-center justify-between">
+    <!-- Desktop Logo (visible on md and up) -->
+    <div class="logo hidden md:block">
+      <a href="#hero">
+        <img src="/assets/logo.gif" alt="Company Logo" class="h-24">
+      </a>
+    </div>
+ <!-- Mobile Hamburger Icon (right‑aligned) -->
+<div class="flex justify-end w-full md:hidden">
+  <button @click="open = !open" class="focus:outline-none z-50 mr-4">
+    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
+</div>
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:block">
+      <ul class="flex space-x-6">
+        <li><a href="#recommended-treks" class="nav-link hover:text-orange-400">Recommended Treks</a></li>
+        <li><a href="#about-us" class="nav-link hover:text-orange-400">About Us</a></li>
+        <li><a href="#our-services" class="nav-link hover:text-orange-400">Our Services</a></li>
+        <li><a href="#destinations" class="nav-link hover:text-orange-400">Destinations</a></li>
+        <li><a href="#contact-us" class="nav-link hover:text-orange-400">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+  <!-- Mobile Navigation Overlay -->
+  <div x-show="open" x-transition class="mobile-menu-overlay md:hidden">
+    <div class="relative w-full">
+      <button @click="open = false" class="absolute right-4 top-4 focus:outline-none">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="logo mb-6">
+      <a href="#hero" @click="open = false">
+        <img src="/assets/logo.gif" alt="Company Logo" class="h-240 mx-auto">
+      </a>
+    </div>
+    <nav class="mobile-nav">
+      <ul class="flex flex-col items-center space-y-4">
+        <li>
+          <a href="#recommended-treks" @click="open = false" class="nav-link menu-text hover:text-orange-400">Recommended Treks</a>
+        </li>
+        <li>
+          <a href="#about-us" @click="open = false" class="nav-link menu-text hover:text-orange-400">About Us</a>
+        </li>
+        <li>
+          <a href="#our-services" @click="open = false" class="nav-link menu-text hover:text-orange-400">Our Services</a>
+        </li>
+        <li>
+          <a href="#destinations" @click="open = false" class="nav-link menu-text hover:text-orange-400">Destinations</a>
+        </li>
+        <li>
+          <a href="#contact-us" @click="open = false" class="nav-link menu-text hover:text-orange-400">Contact Us</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero relative">
+    <div class="banner">
+      <video id="heroVideo" class="hero-video" autoplay muted loop playsinline preload="auto">
+        <source src="/assets/hero.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="overlay z-10">
+      <button type="button" data-modal-trigger class="hero-btn">Book Now</button>
+    </div>
+
+    <div class="wave-container">
+      <div class="wave anim-wave">
+        <svg viewBox="0 0 1664 200" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 0 0 C 241 0 241 127 482 127 L 482 127 L 482 0 L 0 0 Z"/>
+          <path d="M 481 127 C 640 127 640 49 799 49 L 799 49 L 799 0 L 481 0 Z"/>
+          <path d="M 798 49 C 1023 49 1023 172 1248 172 L 1248 172 L 1248 0 L 798 0 Z"/>
+          <path d="M 1247 172 C 1463.5 172 1463.5 0 1680 0 L 1680 0 L 1680 0 L 1247 0 Z"/>
+        </svg>
+      </div>
+    </div>
+    </div>
+  </section>
+
+<!-- MUSIC Section -->
+<audio
+  id="bg-music"
+  src="assets/child.mp3"
+  autoplay
+  loop
+  muted
+></audio>
+
+<!-- Music control -->
+<div
+  id="music-control"
+  class="fixed bottom-6 right-6 z-50 flex items-center"
+>
+  <!-- Play/Pause -->
+  <button
+    id="toggleMusic"
+    class="gradient-bg w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg transition-opacity duration-200 hover:opacity-90"
+  >
+    <svg
+      id="speakerIcon"
+      xmlns="http://www.w3.org/2000/svg"
+      class="w-6 h-6"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+    >
+      <!-- “Mute” icon by default -->
+      <path
+        d="M9.586 3.586A2 2 0 0 0 8 4.414v11.172a2 2
+           0 0 0 1.586 1.828l4.828 1.207A1 1 0 0 0
+           15.5 17V3a1 1 0 0 0-1.086-.993l-4.828
+           1.207z"
+      />
+    </svg>
+    <span class="tooltip">Play/Pause Music</span>
+  </button>
+  <!-- Volume slider (hidden by default) -->
+  <input
+    id="volumeSlider"
+    type="range"
+    min="0"
+    max="1"
+    step="0.01"
+    value="0.5"
+    class="hidden w-20 h-1 ml-2 cursor-pointer"
+  />
+</div>
+
+
+  <!-- Hidden-by-default slider -->
+  <input
+    id="volumeSlider"
+    type="range"
+    min="0"
+    max="1"
+    step="0.01"
+    value="0.5"
+    class="hidden w-20 h-1 ml-2 cursor-pointer"
+  />
+</div>
+
+
+  <!-- Recommended Treks Section (Swiper Carousel) -->
+  <section id="recommended-treks" class="py-10 bg-gray-900 text-white">
+    <div class="trek-container mx-auto px-4">
+      <h2>Recommended Treks</h2>
+      <p class="subheading">
+        Your next epic story awaits in the heart of the Himalaya—explore paths that challenge, inspire, and transform.
+      </p>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <!-- TREK CARD 1 -->
+          <div class="swiper-slide">
+            <div class="trek-card card-lg relative" data-lat="31.38895738746828" data-lon="78.15019986538734" data-altitude="4,575" data-difficulty="Moderate to Difficult">
+              <!-- Background Image -->
+              <div class="card-image" style="background-image: url('/assets/buranPassTrek.png');"></div>
+              <!-- Overlay Content -->
+              <div class="card-overlay absolute inset-0 flex flex-col justify-between p-4">
+                <div class="flex justify-between items-center">
+                  <div class="star-rating flex gap-1">
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star">&#9734;</span>
+                  </div>
+                  <div class="discount-tag text-xs font-bold px-2 py-1">20% OFF</div>
+                </div>
+                <div class="relative text-center">
+                  <h3 class="text-base font-bold">Buran Pass Trek</h3>
+                  <p class="mt-2 text-xs">Experience the stunning landscapes on  challenging Buran Pass Trek.</p>
+                  <button type="button" data-modal-trigger class="btn-gradient mt-7">
+                    Book Now
+                  </button>
+                  <button class="btn-details" onclick="toggleDetails(this)">See Details</button>
+                  <div class="card-widget">
+                    <span class="widget-close" onclick="toggleDetails(this)">×</span>
+                    <div class="widget-item altitude">Altitude: 4,575m</div>
+                    <div class="widget-item difficulty">Grade: Moderate to Difficult</div>
+                    <div class="widget-item climate">Recent Climate: Loading...</div>
+                    <div class="widget-item details">Best Time: Mid May to September</div>
+                    <div class="widget-item distance">Total Distance: 26 KMs</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- TREK CARD 2 -->
+          <div class="swiper-slide">
+            <div class="trek-card card-lg relative" data-lat="31.613161142716574" data-lon="78.02097640280049" data-altitude="4,915" data-difficulty="Hard & Difficult">
+              <div class="card-image" style="background-image: url('/assets/pin-bhaba-trek.jpg');"></div>
+              <div class="card-overlay absolute inset-0 flex flex-col justify-between p-4">
+                <div class="flex justify-between items-center">
+                  <div class="star-rating flex gap-1">
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star half-filled">&#9733;</span>
+                  </div>
+                  <div class="discount-tag text-xs font-bold px-2 py-1">20% OFF</div>
+                </div>
+                <div class="relative text-center">
+                  <h3 class="text-base font-bold">Pin – Bhaba Pass Trek</h3>
+                  <p class="mt-2 text-xs">Embark on the scenic and challenging Pin – Bhaba Trek.</p>
+                  <button type="button" data-modal-trigger class="btn-gradient mt-7">
+                    Book Now
+                  </button>
+                  <button class="btn-details" onclick="toggleDetails(this)">See Details</button>
+                  <div class="card-widget">
+                    <span class="widget-close" onclick="toggleDetails(this)">×</span>
+                    <div class="widget-item altitude">Altitude: 4,915m</div>
+                    <div class="widget-item difficulty">Grade: Hard & Difficult</div>
+                    <div class="widget-item climate">Recent Climate: Loading...</div>
+                    <div class="widget-item details">Best Time: June to September</div>
+                    <div class="widget-item distance">Total Distance: 52 KMs</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- TREK CARD 3 -->
+          <div class="swiper-slide">
+            <div class="trek-card card-lg relative" data-lat="31.835780872748717" data-lon="77.84448424049079" data-altitude="5,319" data-difficulty="Hard & Difficult">
+              <div class="card-image" style="background-image: url('/assets/Pin_parvati_pass.webp');"></div>
+              <div class="card-overlay absolute inset-0 flex flex-col justify-between p-4">
+                <div class="flex justify-between items-center">
+                  <div class="star-rating flex gap-1">
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                  </div>
+                  <div class="discount-tag text-xs font-bold px-2 py-1">20% OFF</div>
+                </div>
+                <div class="relative text-center">
+                  <h3 class="text-base font-bold">Pin – Parvati Trek</h3>
+                  <p class="mt-2 text-xs">Discover unique mountain vistas on the Pin – Parvati Trek.</p>
+                  <button type="button" data-modal-trigger class="btn-gradient mt-7">
+                    Book Now
+                  </button>
+                  <button class="btn-details" onclick="toggleDetails(this)">See Details</button>
+                  <div class="card-widget">
+                    <span class="widget-close" onclick="toggleDetails(this)">×</span>
+                    <div class="widget-item altitude">Altitude: 5,319m</div>
+                    <div class="widget-item difficulty">Grade: Hard & Difficult</div>
+                    <div class="widget-item climate">Recent Climate: Loading...</div>
+                    <div class="widget-item details">Best TIme: June to August</div>
+                    <div class="widget-item distance">Total Distance: 110 KMs</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- TREK CARD 4 -->
+          <div class="swiper-slide">
+            <div class="trek-card card-lg relative" data-lat="32.27134861391218" data-lon="77.34641067600174" data-altitude="4,270" data-difficulty="Easy to Moderate">
+              <div class="card-image" style="background-image: url('/assets/Hamptapass-trek.jpg');"></div>
+              <div class="card-overlay absolute inset-0 flex flex-col justify-between p-4">
+                <div class="flex justify-between items-center">
+                  <div class="star-rating flex gap-1">
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star half-filled">&#9733;</span>
+                  </div>
+                  <div class="discount-tag text-xs font-bold px-2 py-1">20% OFF</div>
+                </div>
+                <div class="relative text-center">
+                  <h3 class="text-base font-bold">Hamta Pass – Chandertal Lake Trek</h3>
+                  <p class="mt-2 text-xs">Traverse diverse terrains from Hamta Pass to Chandertal Lake.</p>
+                  <button type="button" data-modal-trigger class="btn-gradient mt-7">
+                    Book Now
+                  </button>
+                  <button class="btn-details" onclick="toggleDetails(this)">See Details</button>
+                  <div class="card-widget">
+                    <span class="widget-close" onclick="toggleDetails(this)">×</span>
+                    <div class="widget-item altitude">Altitude: 4,270m</div>
+                    <div class="widget-item difficulty">Grade: Easy to Moderate</div>
+                    <div class="widget-item climate">Recent Climate: Loading...</div>
+                    <div class="widget-item details">Best Time: June to September</div>
+                    <div class="widget-item distance">Total Distance: 26 KMs</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- TREK CARD 5 -->
+          <div class="swiper-slide">
+            <div class="trek-card card-lg relative" data-lat="32.07005778182399" data-lon="77.24077433725776" data-altitude="3,660" data-difficulty="Easy to Moderate">
+              <div class="card-image" style="background-image: url('/assets/malana-trek.webp');"></div>
+              <div class="card-overlay absolute inset-0 flex flex-col justify-between p-4">
+                <div class="flex justify-between items-center">
+                  <div class="star-rating flex gap-1">
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star">&#9734;</span>
+                  </div>
+                  <div class="discount-tag text-xs font-bold px-2 py-1">20% OFF</div>
+                </div>
+                <div class="relative text-center">
+                  <h3 class="text-base font-bold">Chanderkhani Pass – Malana Valley Trek</h3>
+                  <p class="mt-2 text-xs">Explore the mysterious Malana Valley via Chanderkhani Pass.</p>
+                  <button type="button" data-modal-trigger class="btn-gradient mt-7">
+                    Book Now
+                  </button>
+                  <button class="btn-details" onclick="toggleDetails(this)">See Details</button>
+                  <div class="card-widget">
+                    <span class="widget-close" onclick="toggleDetails(this)">×</span>
+                    <div class="widget-item altitude">Altitude: 3,660m</div>
+                    <div class="widget-item difficulty">Grade: Easy to Moderate</div>
+                    <div class="widget-item climate">Recent Climate: Loading...</div>
+                    <div class="widget-item details">Best Time: June to September</div>
+                    <div class="widget-item distance">Total Distance: 22 KMs</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- TREK CARD 6 -->
+          <div class="swiper-slide">
+            <div class="trek-card card-lg relative" data-lat="32.447498742394764" data-lon="78.04433829886845" data-altitude="5,580" data-difficulty="Hard & Difficult">
+              <div class="card-image" style="background-image: url('/assets/Parang_La_Pass_Trek.webp');"></div>
+              <div class="card-overlay absolute inset-0 flex flex-col justify-between p-4">
+                <div class="flex justify-between items-center">
+                  <div class="star-rating flex gap-1">
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star half-filled">&#9733;</span>
+                  </div>
+                  <div class="discount-tag text-xs font-bold px-2 py-1">20% OFF</div>
+                </div>
+                <div class="relative text-center">
+                  <h3 class="text-base font-bold">Parang La Pass Trek</h3>
+                  <p class="mt-2 text-xs">Challenge yourself on the rugged trails of Parang La Pass.</p>
+                  <button type="button" data-modal-trigger class="btn-gradient mt-7">
+                    Book Now
+                  </button>
+                  <button class="btn-details" onclick="toggleDetails(this)">See Details</button>
+                  <div class="card-widget">
+                    <span class="widget-close" onclick="toggleDetails(this)">×</span>
+                    <div class="widget-item altitude">Altitude: 5,580m</div>
+                    <div class="widget-item difficulty">Grade: Hard & Difficult</div>
+                    <div class="widget-item climate">Recent Climate: Loading...</div>
+                    <div class="widget-item details">Best Time: July & August</div>
+                    <div class="widget-item distance">Total Distance: 86 KMs</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- TREK CARD 7 -->
+          <div class="swiper-slide">
+            <div class="trek-card card-lg relative" data-lat="31.659102927202323" data-lon="77.64563298570079" data-altitude="5,227" data-difficulty="Hard & Difficult">
+              <div class="card-image" style="background-image: url('/assets/shrikhand.jpg');"></div>
+              <div class="card-overlay absolute inset-0 flex flex-col justify-between p-4">
+                <div class="flex justify-between items-center">
+                  <div class="star-rating flex gap-1">
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                  </div>
+                  <div class="discount-tag text-xs font-bold px-2 py-1">20% OFF</div>
+                </div>
+                <div class="relative text-center">
+                  <h3 class="text-base font-bold">Shrikhand Kailash Trek</h3>
+                  <p class="mt-2 text-xs">Experience a spiritual journey on the Shrikhand Kailash Trek.</p>
+                  <button type="button" data-modal-trigger class="btn-gradient mt-7">
+                    Book Now
+                  </button>
+                  <button class="btn-details" onclick="toggleDetails(this)">See Details</button>
+                  <div class="card-widget">
+                    <span class="widget-close" onclick="toggleDetails(this)">×</span>
+                    <div class="widget-item altitude">Altitude: 5,227m</div>
+                    <div class="widget-item difficulty">Grade: Hard & Difficult</div>
+                    <div class="widget-item climate">Recent Climate: Loading...</div>
+                    <div class="widget-item details">Best Time: July to Mid August</div>
+                    <div class="widget-item distance">Total Distance: 72 KMs</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- TREK CARD 8 -->
+          <div class="swiper-slide">
+            <div class="trek-card card-lg relative" data-lat="31.45297142586881" data-lon="78.40118420619493" data-altitude="4,800" data-difficulty="Hard & Difficult">
+              <div class="card-image" style="background-image: url('/assets/kinner_kailash_trek.jpg');"></div>
+              <div class="card-overlay absolute inset-0 flex flex-col justify-between p-4">
+                <div class="flex justify-between items-center">
+                  <div class="star-rating flex gap-1">
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                  </div>
+                  <div class="discount-tag text-xs font-bold px-2 py-1">20% OFF</div>
+                </div>
+                <div class="relative text-center">
+                  <h3 class="text-base font-bold">Kinner Kailash Trek</h3>
+                  <p class="mt-2 text-xs">Embark on an adventure to the mystical Kinner Kailash.</p>
+                  <button type="button" data-modal-trigger class="btn-gradient mt-7">
+                    Book Now
+                  </button>
+                  <button class="btn-details" onclick="toggleDetails(this)">See Details</button>
+                  <div class="card-widget">
+                    <span class="widget-close" onclick="toggleDetails(this)">×</span>
+                    <div class="widget-item altitude">ALTITUDE: 4,800m</div>
+                    <div class="widget-item difficulty">Grade: Hard & Difficult</div>
+                    <div class="widget-item climate">Recent Climate: Loading...</div>
+                    <div class="widget-item details">Best Time: Mid May to September</div>
+                    <div class="widget-item distance">Total Distance: 35 KMs</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Swiper Navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+
+  
+<!-- About Us Section -->
+<section id="about-us" class="about-us-section py-20 relative">
+  <!-- Optional overlay for enhanced contrast -->
+  <!-- Custom full-width wrapper (no extra side margins) -->
+  <div class="about-us-wrapper flex flex-col md:flex-row w-full">
+    <!-- Text Content (Left Column) -->
+    <div class="about-text flex-1 text-left md:pl-6">
+      <h3 class="sub-heading text-4xl font-extrabold mb-4">We are the Best...</h3>
+      <h2 class="heading text-4xl font-extrabold mb-6">About Us</h2>
+      <p class="mb-4 leading-relaxed">
+        Welcome to <b>Epic Himalaya</b>, your trusted companion for unforgettable journeys across India’s diverse destinations. Founded by passionate, adventurers and travel expert - <b>Mr. Ashit Kumar</b>, we specialize in trekking and travel experiences that rejuvenate. Our custom itineraries blend adrenaline‑pumping adventure with moments of serene reflection—whether camping under the Milky Way or sharing chai with a Himalayan family, every moment is uniquely yours.
+      </p>
+      <p class="mb-4 leading-relaxed">
+        At Epic Himalaya, we believe every journey should be epic. From the Himalayas to Kerala’s backwaters, we design treks and tours that are thrilling and enriching. Our knowledgeable guides and meticulous planning ensure lifelong memories and a deeper appreciation of India’s natural wonders and vibrant cultures. Your trip also supports grassroots conservation and cultural preservation.
+      </p>
+      <p class="mb-4 leading-relaxed">
+        Safety is our top priority: we provide state‑of‑the‑art gear, 24/7 support, and small group sizes for personalized attention. Whether you’re a first‑time trekker or a seasoned mountaineer, you’ll feel supported to tackle each challenge and savor every vista.
+      </p>
+      <p class="leading-relaxed">
+        Whether you seek a challenging Himalayan climb, a peaceful yoga retreat, or a culturally immersive tour through Rajasthan’s forts, Epic Himalaya is dedicated to turning your travel dreams into reality. Join us and experience India like never before—epic journeys and once‑in‑a‑lifetime experiences await!
+      </p>      
+    </div>
+    <!-- Gallery Grid (Right Column) -->
+    <div class="about-gallery flex-1 flex justify-end md:pr-4 mt-8 md:mt-0">
+      <div class="gallery-grid">
+        <!-- Top row -->
+        <div class="gallery-item gallery-item--1">
+          <img src="/assets/1.jpg" alt="Gallery Image 1">
+        </div>
+        <div class="gallery-item gallery-item--2">
+          <img src="/assets/2.png" alt="Gallery Image 2">
+        </div>
+        <div class="gallery-item gallery-item--3">
+          <img src="/assets/3.jpg" alt="Gallery Image 3">
+        </div>
+        <!-- Middle row -->
+        <div class="gallery-item gallery-item--4">
+          <img src="/assets/4.jpg" alt="Gallery Image 4">
+        </div>
+        <div class="gallery-item gallery-item--logo">
+          <img src="/assets/logo.gif" alt="Logo">
+        </div>
+        <div class="gallery-item gallery-item--5">
+          <img src="/assets/5.jpg" alt="Gallery Image 5">
+        </div>
+        <!-- Bottom row -->
+        <div class="gallery-item gallery-item--6">
+          <img src="/assets/6.jpg" alt="Gallery Image 6">
+        </div>
+        <div class="gallery-item gallery-item--7">
+          <img src="/assets/7.jpg" alt="Gallery Image 7">
+        </div>
+        <div class="gallery-item gallery-item--8">
+          <img src="/assets/8.jpg" alt="Gallery Image 8">
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Counters -->
+    <div class="about-counters flex flex-wrap justify-center items-center mt-12 z-10">
+      <div class="counter-item flex flex-col items-center m-4">
+        <span class="counter-number" data-target="25">0</span>
+        <p class="counter-label mt-2">Years of Experience</p>
+      </div>
+      <div class="counter-item flex flex-col items-center m-4">
+        <span class="counter-number" data-target="600+">0</span>
+        <p class="counter-label mt-2">Satisfied Clients</p>
+      </div>
+      <div class="counter-item flex flex-col items-center m-4">
+        <span class="counter-number" data-target="742">0</span>
+        <p class="counter-label mt-2">Tours Completed</p>
+      </div>
+    </div>
+</section>
+
+
+
+<!-- Our Services Section --> 
+<section id="our-services" class="py-10 bg-gray-900 text-white">
+  <div class="services-container  mx-auto px-4">
+  <div class="text-center">
+    <h2 class="services-heading mb-4">What We Offer</h2>
+    <p class="services-subheading text-lg text-gray-400 mb-12">Explore. Experience. Remember. Our services are crafted for adventures you’ll never forget!!</p>
+    <div class="swiper services-swiper">
+      <div class="swiper-wrapper">
+        <!-- Service Card 1: Custom Itineraries -->
+        <div class="swiper-slide">
+          <div class="service-card bg-gray-800 rounded-2xl p-8 text-center shadow-lg" style="--delay:0.2s" role="region" aria-labelledby="custom-itineraries">
+            <div class="icon-container mx-auto mb-6 w-20 h-20 rounded-full bg-gradient-to-br from-red-400 to-teal-500 flex items-center justify-center">
+<svg width="64px" height="64px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--gis" preserveAspectRatio="xMidYMid meet" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M13.271 4.828c-4.115-.018-6.85.07-6.85.07A2.5 2.5 0 0 0 4 7.396V12.5H2.47A2.471 2.471 0 0 0 0 14.97v70.06a2.471 2.471 0 0 0 2.47 2.47H45.9c2.626 1.767 6.007 1.362 8.2 0h43.43a2.471 2.471 0 0 0 2.47-2.47V14.97a2.471 2.471 0 0 0-2.47-2.47H96V7.396a2.5 2.5 0 0 0-2.422-2.498s-2.734-.088-6.85-.07c-4.114.018-9.608.141-15.128.563c-5.52.42-11.058 1.12-15.457 2.402c-2.2.64-4.126 1.407-5.702 2.539c-.15.108-.296.227-.441.346a8.617 8.617 0 0 0-.441-.346c-1.576-1.132-3.502-1.898-5.702-2.539C39.458 6.512 33.92 5.812 28.4 5.391c-5.52-.422-11.014-.545-15.129-.563zm73.446 2.5c4.07-.018 6.783.068 6.783.068v70s-37.924-1.474-42.953 6.286c-.349.522-.697.555-1.045.078C44.674 75.913 6.5 77.396 6.5 77.396v-70s2.713-.084 6.783-.066c12.21.054 36.639 1.04 36.717 8.066c.078-7.026 24.507-8.014 36.717-8.068zM4.94 79.35a2.5 2.5 0 0 0 1.657.545s10.718-.412 21.379.365c5.33.388 10.652 1.093 14.418 2.2c.105.032.195.067.298.099H4.941v-3.21zm90.118 0v3.209H57.307c.103-.032.193-.067.298-.098c3.766-1.108 9.088-1.813 14.418-2.201c10.66-.777 21.38-.365 21.38-.365a2.5 2.5 0 0 0 1.656-.545z" fill="#000000"></path><path d="M86.707 9.83c-4.025.018-9.386.137-14.728.545c-5.342.408-10.673 1.122-14.44 2.219c-1.883.548-3.364 1.212-4.182 1.799c-.817.586-.855.825-.857 1.03v11.731c.045-.024.1-.05.111-.07a.18.18 0 0 1 .123-.096c.155-.034.383.11.516.364c.163.31.164.363.02.62c-.088.156-.316.39-.506.518c-.124.084-.185.153-.264.227v15.851c.18-.298.214-.606.104-1.047c-.11-.438-.1-.502.203-1.109c.295-.593.581-.995 1.125-1.578a.868.868 0 0 0 .209-.506c0-.18.123-.425.343-.682c.624-.728.689-1.146.16-1.052c-.33.06-.327.083-.341-1.17c-.006-.52.036-.792.134-.89c.088-.088.432-.174.893-.225l.75-.084v-.391c0-.472-.254-.876-.523-.828c-.245.044-.372-.242-.18-.406a.613.613 0 0 1 .385-.108c.208.015.234-.013.185-.201c-.048-.184-.02-.218.166-.203c.212.016.672-.31.567-.402c-.052-.045-.97.266-1.409.476c-.24.116-.241.11-.078-.164c.126-.211.14-.31.053-.404c-.087-.095-.068-.167.08-.31c.15-.147.16-.184.041-.169c-.108.015-.08-.057.094-.24c.22-.23.23-.274.094-.393c-.137-.118-.17-.11-.297.073a1.026 1.026 0 0 0-.154.328c-.007.067-.018.218-.028.338c-.01.152-.136.277-.422.422c-.537.271-.58.275-.642.035c-.03-.113-.008-.213.049-.223c.058-.01.076-.127.04-.267c-.085-.341.028-.63.23-.584c.088.02.128.005.087-.03c-.12-.105.23-.49.43-.47c.124.011.203-.058.24-.215c.03-.128.015-.226-.035-.217c-.1.018-.015-.59.127-.906c.051-.115.207-.224.355-.25c.211-.038.254-.004.211.177c-.04.166-.006.214.139.188c.22-.04.245.087.086.428c-.08.172-.073.27.023.375c.156.169.347.471.49.779c.058.124.175.24.262.26c.118.026.14.128.092.412c-.063.365-.058.372.176.217c.133-.089.312-.325.396-.528c.114-.273.251-.41.535-.535c.33-.144.381-.21.381-.47c0-.167-.043-.296-.1-.286c-.224.04-.102-.608.167-.877c.147-.148.303-.275.345-.283c.151-.027.18.66.037.857c-.28.386-.105.604.385.477c.152-.04.305-.028.34.025c.041.063.16.03.338-.095c.431-.305.836-.456.836-.31c0 .29.394-.342.445-.716c.106-.774.191-1.126.281-1.142c.05-.01.183-.128.295-.266a.984.984 0 0 1 .588-.32c.21-.039.448-.128.531-.197c.303-.255-.212-.221-.681.044c-.414.235-.472.247-.7.131c-.136-.07-.253-.156-.253-.193l-.05-.584c-.039-.464-.01-.563.286-.97c.681-.939.707-.988.578-1.128a.363.363 0 0 0-.295-.101c-.191.034-.454.568-.353.72c.034.053-.15.338-.408.633c-.588.67-.737 1.152-.46 1.473c.272.314.238.881-.056.934c-.076.013-.18.293-.25.685c-.098.54-.159.67-.32.7c-.11.019-.198.083-.198.142c0 .059-.093.122-.205.142c-.112.02-.203.086-.203.145c0 .177-.308.175-.377-.002c-.038-.098.005-.23.11-.328c.164-.155.163-.2-.02-.736l-.195-.57l-.31.327c-.53.561-.79.467-.897-.322a6.766 6.766 0 0 1-.057-1.246c.006-.077.057-.12.113-.094c.056.027.104-.016.104-.093c.001-.078.19-.318.418-.536c.352-.335 1.052-1.407 1.062-1.62c.006-.157.5-1.173.576-1.186c.046-.008.084-.077.084-.155c0-.077.082-.249.18-.38c.098-.132.239-.374.313-.538c.074-.163.291-.415.484-.558c.193-.143.352-.303.352-.354c0-.05.105-.08.236-.07c.222.019.573-.303.502-.459c-.015-.032.076-.089.203-.125c.755-.22.898-.222 1.146-.021c.248.199.252.218.08.449c-.174.235-.17.235.16.101c.291-.117.347-.107.395.077c.037.14.138.2.295.171c.132-.023.392.066.576.198c.185.131.464.3.621.377c.51.245.56.802.108 1.193c-.21.181-.31.204-.727.16c-.266-.028-.552-.092-.636-.14c-.108-.062-.102-.033.02.095c.094.1.173.34.163.531c-.01.38.261.73.524.678c.139-.027.135-.043-.018-.11c-.098-.042-.178-.195-.178-.339c0-.3.07-.332.35-.16c.284.174.457.117.392-.131c-.077-.298.455-.942.76-.918c.217.017.223-.003.164-.543c-.034-.309-.107-.614-.162-.678c-.073-.084-.047-.125.092-.148c.604-.103.953.24.594.58c-.096.092-.148.217-.108.277c.113.17.346.085.414-.152c.06-.206.773-.898.96-.932c.05-.009.148-.098.218-.199a.58.58 0 0 1 .31-.217c.138-.024.168.03.126.219c-.046.205-.03.223.082.094a.728.728 0 0 1 .365-.2c.126-.022.259-.097.297-.167c.037-.07.17-.12.297-.11c.125.01.257-.016.29-.058c.098-.12-.125-.443-.284-.414c-.165.029-.304-.317-.204-.506c.045-.085.143-.07.287.04c.12.093.45.207.729.255c.28.047.687.205.904.35c.382.253.393.254.323.02c-.04-.133-.144-.288-.229-.343c-.103-.067-.133-.194-.09-.383c.036-.156.012-.367-.056-.469c-.104-.155-.08-.26.152-.65c.151-.255.273-.566.273-.691s.062-.302.135-.393a1.42 1.42 0 0 0 .2-.365c.037-.11.134-.21.214-.225c.222-.04.283.25.086.406c-.146.116-.13.131.106.092c.244-.04.28-.004.28.281c0 .18-.045.425-.1.545c-.072.153-.068.237.015.276c.069.032.09.012.053-.045c-.036-.055.037-.253.162-.442c.125-.188.213-.422.197-.52c-.016-.096.016-.215.072-.26c.114-.095.286.177.27.427c-.015.232.17.3.297.11c.215-.323.521-.378.81-.15c.153.122.325.211.387.2c.061-.01-.004-.112-.148-.226c-.172-.136-.288-.371-.333-.676c-.078-.538-.07-.545.803-.815c.55-.17.7-.299.475-.404c-.162-.076-.122-.567.049-.598c.09-.016.127-.084.091-.175c-.04-.103.005-.163.145-.188c.112-.02.23-.108.26-.195c.03-.088.23-.251.445-.364c.214-.112.434-.271.49-.353c.156-.227.662-.407.825-.295c.08.056.22.049.322-.016c.099-.062.295-.123.435-.134c.206-.017.23-.042.127-.135c-.194-.175-.153-.28.125-.33c.18-.032.235-.088.194-.194c-.072-.183.32-.933.591-1.134a.387.387 0 0 1 .108-.055a.453.453 0 0 1 .21-.016c.21.033.393.198.345.399c-.033.137.001.204.095.187c.081-.014.175.043.207.125c.037.095.196.128.43.088c.56-.095.953.245 1.012.875c.048.517-.008.623-.76 1.43c-.168.181-.169.191.021.195c.11.002.238.052.28.111c.054.077.105.057.177-.07c.086-.15.112-.144.163.043c.05.184.104.2.294.09c.316-.182 1.078-.112 1.008.092c-.035.102.066.154.307.158c.438.008.576-.095.576-.428c0-.35.144-.439.502-.308c.167.06.39.095.496.076c.374-.067.54.248.514.974c-.021.562.009.693.176.791c.185.11.206.09.285-.25c.116-.499.232-.62.367-.378c.088.157.18.177.406.09c.172-.067.322-.07.365-.004c.054.081.117.063.24-.077c.093-.104.217-.19.272-.19c.055.002.114-.084.133-.19c.019-.107-.014-.187-.074-.176c-.06.01-.11-.053-.11-.14c0-.09.088-.175.196-.194c.107-.02.213-.093.234-.162c.06-.199 2.002-.045 2.121.168c.053.093.07.202.037.242c-.032.04.06.083.207.095c.088.008.132.036.178.065V9.87c-1.128-.023-1.72-.053-4.293-.04zm-7.45 3.186c.117-.021.184.015.15.08c-.083.153-.36.203-.36.064c0-.059.095-.124.21-.144zm9.405.34c.078.007.195.058.39.16c.252.13.573.22.714.199c.276-.04.727.05.56.113c-.056.021.035.043.203.05c.338.016.401.231.133.456c-.217.183-.896-.007-.896-.25c0-.234-.156-.172-.465.184c-.149.17-.392.331-.541.357c-.15.026-.417.105-.594.176c-.274.109-.349.09-.496-.12c-.32-.453.01-1.28.396-1.25a.314.314 0 0 1 .168.069c.167.129.195.125.274-.037c.038-.078.076-.115.154-.108zm-1.348.468c.056-.01.104.126.104.303c0 .176-.048.33-.104.34c-.056.01-.101-.126-.101-.303c0-.176.045-.33.101-.34zm1.131 1.23c.104.02.195.164.133.28c-.028.052.034.08.139.06c.24-.042.435.123.435.372c0 .148-.076.201-.332.238a2.823 2.823 0 0 1-.51.03c-.193-.02-.247-.203-.068-.235c.068-.012.086-.133.045-.319c-.04-.183-.02-.337.055-.398a.124.124 0 0 1 .103-.027zm-16.683.483c.149-.041.256.022.3.197c.097.385-.098.666-.757 1.094c-.357.232-.742.582-.93.85l-.523.75c-.112.16-.344.629-.516 1.045c-.353.855-.347 1.336.02 1.68c.115.11.175.236.126.277c-.116.096-.702.182-.822.12c-.051-.025-.124-.172-.162-.327c-.046-.19-.136-.27-.271-.246c-.149.026-.204-.037-.204-.239c0-.155.046-.253.104-.226c.097.047.143-.103.107-.375c-.01-.077.064-.282.164-.457c.1-.175.17-.372.157-.438c-.014-.065.073-.31.193-.545c.123-.24.195-.515.164-.633c-.036-.137.003-.241.115-.304c.094-.053.383-.363.641-.688c.4-.502.526-.597.842-.644c.288-.043.448-.147.709-.46c.204-.243.394-.39.543-.43zM61.42 16.2a.718.718 0 0 1 .504.123l.217.174l-.239.31c-.23.299-.592.49-.46.245c.034-.065-.024-.103-.13-.084c-.153.027-.193-.043-.183-.342c.006-.337.035-.38.29-.426zm-.848.182c.13-.004.207.008.207.039a.132.132 0 0 1-.103.125c-.056.01-.102.088-.102.174s-.078.438-.174.781c-.185.663-.394.836-.5.414c-.035-.14-.121-.245-.193-.232c-.167.03-.283-.403-.139-.522c.068-.056.072-.098.01-.111c-.055-.012-.133-.125-.172-.25c-.07-.221-.05-.232.65-.358v.002c.207-.036.387-.058.516-.062zm20.78.572c.007-.025-.024-.017-.092.022c-.103.057-.23.111-.281.12c-.052.01-.094.088-.094.176c0 .21.025.201.316-.125a.986.986 0 0 0 .15-.193zm-6.147 3.156a.721.721 0 0 0-.053.202c-.038.2-.025.27.04.191a.452.452 0 0 0 .06-.314c-.015-.071-.03-.098-.047-.079zm-2.225.319c-.037.045-.053.266-.054.677c-.002.804.145 1.201.322.874c.05-.092.018-.15-.084-.155c-.136-.006-.153-.114-.103-.625c.033-.339.015-.68-.038-.758c-.017-.024-.03-.027-.043-.013zm.147 1.922c-.056.01-.102.11-.102.224s-.045.247-.101.293c-.102.084-.145.4-.053.383c.027-.005.117-.163.203-.352c.181-.398.197-.574.053-.548zm-5.584.078c.048-.008.1.025.19.093c.18.14.18.163.02.375c-.174.234-.356.315-.476.211c-.115-.1-.077-.319.096-.53c.076-.094.122-.142.17-.15zm5.117.924a.37.37 0 0 0-.144.039c-.112.05-.205.11-.205.132c0 .023.092.024.205.004c.112-.02.203-.08.203-.132c0-.027-.022-.042-.059-.043zm18.055.699c-.056-.005-.152.024-.31.084c-.211.08-.618.181-.905.226c-.518.082-.525.089-1.063.848c-.297.42-.681.92-.855 1.111c-.233.257-.27.341-.144.32a.47.47 0 0 1 .33.112c.088.077.162.088.162.025c0-.17.364-.203.51-.045c.167.182.448.132.37-.066c-.034-.088 0-.16.08-.174c.163-.029.262.28.262.822c0 .214.072.58.157.817c.172.482.138.609-.118.433c-.158-.109-.167-.075-.109.436c.036.314.024.538-.027.514c-.05-.024-.122.015-.16.086c-.112.209.366.582.595.464c.14-.071.177-.058.123.043c-.043.08-.015.174.06.21c.103.047.07.101-.13.216c-.147.085-.299.217-.338.291c-.042.078-.18.126-.326.114c-.228-.02-.244 0-.17.208c.114.322.09.78-.082 1.428c-.12.455-.2.582-.447.703a6.83 6.83 0 0 0-.557.313c-.14.09-.301.178-.357.2c-.327.114-.767.479-.862.714c-.123.306-.312.288-.312-.03c0-.114-.046-.2-.102-.19c-.204.036-.095-.216.28-.643c.272-.312.478-.456.716-.498c.257-.047.363-.126.452-.348c.075-.186.197-.303.35-.33c.316-.057.46-.404.46-1.11c0-.445.049-.64.203-.818c.174-.2.212-.42.258-1.54c.037-.903.02-1.302-.057-1.288c-.06.01-.111.19-.111.398c0 .535-.266 1.15-.969 2.24c-.395.614-.717.87-1.011.803c-.151-.033-.47.32-.47.522c0 .065-.117.236-.26.38l-.263.262l.217.272c.147.18.208.393.186.633c-.028.306-.089.388-.414.564l-.383.207l-.014-.392a4.483 4.483 0 0 1 0-.53c.01-.075-.049-.096-.13-.048c-.208.12-.3-.073-.169-.352c.095-.201.08-.23-.101-.197c-.116.02-.325.136-.465.258c-.315.273-.388.22-.252-.178l.103-.307l-.4.373c-.37.345-.387.385-.238.531c.102.1.202.116.273.041c.135-.14.674-.146.674-.007c0 .053-.084.144-.182.2a1.768 1.768 0 0 0-.359.315c-.176.203-.173.233.113.692c.217.347.274.53.205.672c-.059.124-.055.189.01.177c.259-.046-.548 1.46-1.033 1.93c-.185.179-.614.454-.953.613c-.538.253-.618.325-.637.569c-.04.509-.462.856-.603.496c-.042-.107.018-.253.17-.408c.13-.134.208-.266.175-.295c-.114-.1-.53.155-.664.406c-.12.225-.092.288.282.646c.356.343.414.464.414.883c0 .428-.035.508-.282.666a1.58 1.58 0 0 0-.414.393c-.18.286-.427.315-.427.05c0-.12-.067-.2-.155-.185a.205.205 0 0 1-.217-.121c-.032-.083-.123-.14-.2-.125c-.079.014-.141-.049-.141-.137c0-.088-.048-.15-.104-.14c-.117.02-.137.985-.023 1.13c.04.053.196.153.343.225a.671.671 0 0 1 .323.424c.03.16.087.392.127.517c.058.184.033.235-.13.264c-.304.054-.712-.332-.835-.789c-.06-.224-.18-.454-.264-.512c-.103-.07-.148-.29-.138-.677c.008-.39-.038-.617-.147-.711a.887.887 0 0 1-.225-.34c-.07-.218-.205-.242-.306-.053c-.035.065-.153.135-.262.154c-.154.028-.197-.04-.197-.302a1.15 1.15 0 0 0-.237-.627a2.29 2.29 0 0 1-.308-.475c-.053-.14-.103-.152-.203-.047c-.073.077-.28.176-.46.223c-.18.046-.322.144-.322.219c0 .074-.14.236-.308.357c-.168.121-.305.259-.305.309c0 .05-.226.294-.5.54c-.49.438-.498.464-.488.98c.005.358.066.578.191.687c.35.304.205 1.011-.222 1.088c-.146.026-.214-.494-.098-.743c.178-.38.03-.369-.25.018c-.224.31-.27.336-.395.217c-.254-.242-1.003-2.063-1.019-2.477c-.014-.36-.04-.393-.254-.312c-.242.091-.64-.116-.64-.336c-.002-.064-.122-.215-.268-.334c-.237-.194-.36-.201-1.172-.073c-.546.087-.97.103-1.06.04c-.124-.086-.153-.073-.153.07c0 .096.161.226.358.289c.416.134.474.466.152.861c-.112.138-.203.284-.203.326c0 .144-.663.79-.844.823c-.099.017-.258.142-.354.277c-.096.135-.22.255-.279.266c-.058.01-.224.105-.369.21a8.131 8.131 0 0 1-.836.481c-.497.253-.558.312-.463.455c.098.146.17.141.633-.055c.287-.12.622-.271.744-.334c.64-.327-.055 1.56-.926 2.514l-.517.568l-.168.137l-.252.34c-.437.586-.554.922-.502 1.451c.027.271.083.543.125.604c.042.06.084.41.094.777c.015.597-.012.693-.244.926c-.143.143-.309.27-.372.283c-.062.013-.24.183-.396.377c-.22.275-.266.4-.201.572c.142.379.029.93-.227 1.098c-.137.09-.256.29-.293.488c-.07.385-.802 1.624-1.166 1.977c-.218.212-1.38.662-1.912.742c-.251.038-.486-.24-.424-.502c.049-.205-.263-.926-.51-1.176c-.078-.08-.205-.467-.279-.86c-.133-.705-.375-1.29-.574-1.384c-.224-.105-.04-1.178.277-1.621a.493.493 0 0 0 .078-.426a2.988 2.988 0 0 1-.1-.443c-.052-.413-.26-.807-.616-1.156c-.195-.191-.356-.418-.356-.506c0-.008-.015-.01-.015-.016l.021-.006l.074-.26l.07-.402c.082-.469-.055-.597-.472-.443c-.208.076-.312.046-.438-.133c-.193-.275-.485-.248-1.04.098c-.218.135-.67.31-1.006.386a70.11 70.11 0 0 0-.809.188c-.258.064-1.282-.497-1.387-.76c-.045-.113-.247-.343-.449-.51c-.202-.166-.365-.385-.365-.488c0-.015-.008-.028-.01-.043v28.508c.117-.04.29-.154.416-.28c.14-.14.327-.268.416-.285c.089-.017.225-.165.303-.332c.207-.443.711-.944.93-.923c.102.01.213-.031.244-.09c.031-.06.203-.132.382-.164c.18-.032.488-.173.684-.31c.295-.208.35-.302.326-.54c-.023-.23.016-.297.182-.326c.114-.02.205.026.205.103s.065.22.144.317c.126.157.284.154 1.377-.037c.68-.12 1.237-.25 1.237-.293c0-.043.119-.182.265-.309c.25-.216.274-.221.364-.068c.062.105.228.142.472.101c.208-.034.54-.032.737.006c.466.09 1.09.019 1.171-.135c.036-.066.168-.139.295-.162c.128-.022.343-.185.479-.361c.188-.243.314-.317.527-.31c.154.004.28-.025.27-.067c-.063-.424.158-.476.57-.13c.403.337.808.33.854-.016c.018-.137.157-.338.312-.45a2.13 2.13 0 0 0 .422-.404c.186-.268.982-.798 1.11-.738c.055.026.142-.04.195-.149c.059-.12.16-.183.265-.16c.122.027.162-.01.14-.137c-.036-.221.468-.582.905-.648c.381-.058.883.17.815.37c-.069.198.91.29 1.994.185c.799-.077.892-.063.992.15c.098.208.136.214.318.063c.185-.154.249-.138.57.162c.304.283.393.316.561.191c.11-.081.172-.194.137-.248c-.09-.136.331-.655.643-.793c.141-.062.229-.138.195-.168s-.011-.128.053-.22c.087-.127.084-.227-.016-.405c-.103-.19-.103-.275 0-.424c.113-.163.149-.163.297-.008c.217.228.493.215.912-.043c.311-.19.348-.192.486-.01c.13.173.22.177.684.04c.647-.192.789-.322.789-.723c0-.258.043-.315.26-.353c.142-.026.281.017.312.095c.09.23.362.23.565.002c.147-.166.218-.187.334-.107c.115.08.166.062.234-.078c.116-.239.48-.197.637.072c.067.115.276.259.465.318c.332.106.354.098.773-.271c.515-.455.617-.482.791-.22c.074.11.197.16.277.114a.256.256 0 0 1 .276.03c.165.143.565.184.752.076c.078-.046.142-.222.142-.393c0-.367.123-.419.324-.136c.116.161.187.175.334.062c.224-.17.868-.111.946.088c.09.23.319.091.385-.234c.06-.304.081-.318.55-.354c.468-.036.496-.053.621-.392c.074-.2.158-.299.22-.3c.057.003.094.105.058.31c-.038.214.006.282.219.33c.303.066.992.103 1.591.083c.504-.016.595.027.522.24c-.04.115.041.19.248.235c.168.036.306.104.306.15s.274.036.608-.023c.056-.01.073-.005.121-.012v-13.72c-.175.41-.316.807-.316.916c0 .146-.065.236-.19.258c-.105.019-.308.15-.451.293c-.29.292-.314.303-.422.21c-.042-.037-.281-.036-.531.001c-.499.075-.825-.096-.875-.457c-.023-.167-.14-.232-.457-.256c-.416-.03-.596-.104-.596-.248c-.001-.18-.334-.452-.611-.502c-.408-.072-1.787.463-1.787.694c0 .044-.21.15-.467.232c-.257.083-.595.251-.75.375c-.246.196-.322.214-.576.131c-.272-.088-.293-.142-.303-.736c-.007-.407-.086-.786-.217-1.041c-.149-.292-.199-.57-.178-1.012c.033-.687.09-.848.284-.805c.073.017.191-.056.263-.16c.072-.104.202-.202.287-.217c.085-.015.33-.114.547-.22c.31-.153.43-.29.565-.631c.094-.24.208-.42.252-.399c.044.021.205-.13.357-.336c.272-.368.678-.55.803-.361c.103.157.195.09.379-.281c.095-.194.248-.365.338-.381c.1-.018.132-.074.09-.139c-.052-.078.013-.104.224-.086a3.5 3.5 0 0 0 .62-.013c.433-.054.484.016.304.414c-.152.336-.152.338.303.545c.25.114.494.2.54.191c.103-.018.214-.57.214-1.06c0-.195.077-.449.171-.565a.577.577 0 0 1 .098-.105c.02-.014.037-.02.053-.014c.048.016.086.13.158.377c.08.274.198.458.283.443c.13-.023.358.528.358.867c0 .07.138.188.306.262c.169.074.307.167.307.207c0 .04.115.166.254.28c.14.113.255.25.256.306c0 .024.077.096.113.147V42.9a1.05 1.05 0 0 1-.44.17c-.53.052-.56.27-.078.59c.221.147.378.31.35.364c-.096.179-.704.085-1.043-.163c-.398-.29-.49-.288-.635.022c-.128.273-.532.38-.71.185c-.082-.088-.224-.095-.42-.02c-.33.129-.356.089-.172-.253c.094-.18.094-.254 0-.336c-.132-.114-.808-.265-1.028-.228c-.154.025-.315-.113-.512-.438c-.114-.19-.114-.245 0-.342c.06-.012.157-.048.262-.076h.002a.822.822 0 0 1 .303-.037l.01-.002v.002c.071.003.174.117.228.258l.1.256l.285-.262l.283-.266l.813.127c.47.073.914.22 1.052.346c.192.175.3.193.547.092c.17-.07.367-.145.436-.168c.07-.023.205-.138.3-.256c.027-.033.043-.03.067-.055V24.254c-.143.038-.213.024-.213-.088c0-.073-.016-.11-.072-.115zM63.37 27.94c-.095.017-.097.078-.01.256c.1.206.377.213.377.01c0-.12-.234-.29-.367-.266zm27.377 1.235c.021.005.037.024.037.058c0 .058-.071.146-.16.198c-.1.057-.146.043-.121-.04c.038-.126.177-.231.244-.216zm-.457.273c.162-.029.046.226-.201.442c-.13.113-.223.149-.223.084c0-.144.289-.502.424-.526zm-28.605.238a.08.08 0 0 0-.088.014c-.064.053-.055.152.025.272c.136.201.234.052.135-.202a.148.148 0 0 0-.072-.083zm-1.061.243c.183-.033.202.193.031.402c-.174.214-.319.215-.246.002c.034-.1.063-.225.063-.28c0-.053.068-.11.152-.124zm9.43 3.072a.396.396 0 0 0-.18.084c-.262.194-.287.56-.04.574c.216.012.183.042.313-.246c.12-.261.061-.43-.091-.412zm-1.743.055a.536.536 0 0 0-.267.004c-.312.07-.788.447-.879.697c-.086.236.12.751.453 1.133c.176.202.274.376.215.386c-.059.01-.16.131-.225.268c-.1.214-.075.276.176.447c.16.11.35.164.426.123a.973.973 0 0 1 .23-.092c.14-.024.113-.477-.04-.691c-.075-.103-.144-.339-.155-.525c-.012-.208-.138-.455-.326-.637c-.2-.195-.264-.321-.18-.365a1.15 1.15 0 0 0 .274-.244a.547.547 0 0 1 .386-.174c.228.005.235-.008.098-.196a.343.343 0 0 0-.186-.134zm-3.511.66a.47.47 0 0 0-.328.166c-.155.19-.146.2.105.156c.15-.027.3-.102.334-.168c.057-.106-.01-.157-.111-.154zm-1.166.355c-.11.003-.245.05-.305.135c-.06.086-.217.4-.35.697c-.21.474-.222.559-.091.672c.188.164.537.098.793-.15c.256-.249.713-.328.908-.158c.173.15.855.059 1.088-.145c.127-.112.092-.178-.205-.39c-.57-.409-.89-.49-1.174-.303c-.193.126-.276.128-.408.013c-.091-.079-.14-.192-.11-.25c.046-.085-.037-.124-.146-.12zm4.828.596c-.018.012-.03.037-.03.068c0 .063.046.104.102.094c.056-.01.102-.038.102-.064c0-.026-.046-.07-.102-.096c-.028-.013-.054-.014-.072-.002zm-9.086.305c-.017.005-.039.055-.078.158c-.055.145-.035.247.062.308c.08.051.226.212.326.358s.226.23.28.185c.054-.044.125-.013.158.07c.033.085.144.167.246.182c.187.03.355.296.26.412c-.028.035-.127.01-.22-.054c-.153-.105-.163-.097-.1.101c.05.156.008.3-.14.48c-.115.142-.208.303-.208.358c0 .202-.205.26-.514.149c-.37-.135-.35-.361.037-.438c.463-.09.564-.326.248-.576c-.15-.12-.316-.209-.369-.2c-.11.02-.68-.537-.756-.737c-.04-.107-.138-.07-.45.167c-.29.22-.448.283-.575.231c-.218-.089-.377.034-.377.291c0 .107-.16.35-.357.543c-.226.22-.358.442-.358.598c0 .363-.427.866-.83.978c-.189.053-.344.144-.344.203c0 .192.673.029 1.02-.248c.332-.265 2.178-.846 2.476-.78c.155.036.171.708.02.833c-.164.136.214.323.541.27a.679.679 0 0 1 .49.134c.34.296.914.381.914.135c0-.363.615-.775.871-.582c.054.04.36.112.678.156c.438.062.665.038.934-.088c.198-.093.394-.13.443-.088c.151.132.555-.124.654-.414c.052-.152.094-.47.094-.705c0-.396-.018-.419-.23-.306a1.395 1.395 0 0 1-.434.138c-.112.01-.325.04-.475.067c-.4.07-.8-.044-.8-.23c0-.09-.05-.154-.114-.143c-.06.011-.09-.079-.06-.203c.029-.123.015-.218-.031-.21c-.046.009-.057-.086-.028-.208c.042-.173.003-.215-.17-.184c-.123.022-.193.081-.158.135c.035.053-.008.138-.096.19c-.189.109-.213.364-.037.394c.166.028-.119.694-.31.726c-.166.028-.428-.278-.428-.506c-.001-.091-.091-.272-.201-.4c-.11-.127-.201-.337-.201-.467c-.002-.157-.156-.318-.463-.484c-.253-.137-.46-.317-.46-.4c0-.087-.059-.117-.142-.069c-.085.05-.163.007-.19-.103c-.02-.087-.032-.128-.048-.127zm-.918 1.035c.225-.087.24 1.17.016 1.3c-.085.05-.177.03-.205-.042c-.108-.275.031-1.197.189-1.258zm25.664.457c.037-.01.058.024.086.096c.071.182-.134.952-.26.974c-.046.008-.11-.055-.144-.142c-.111-.284-.065-.532.14-.764c.09-.102.142-.155.178-.164zm-26.955.66c.035-.004.064.001.078.023c.075.115-.078.325-.219.3c-.07-.014-.127-.064-.127-.112c0-.09.162-.198.268-.211zm26.785 1.082c.031-.003.07 0 .121.008c.276.04.242.01.322.27a.376.376 0 0 1-.09.376c-.23.242-.19.332.151.35c.234.012.305.074.305.268c0 .24-.013.248-.276.152c-.151-.055-.299-.068-.33-.027c-.03.04.002.085.073.1a.45.45 0 0 1 .369.56c-.07.306.072.327.3.047c.242-.296.445.04.391.64c-.018.204-.188.319-.45.305c-.098-.005-.177-.086-.177-.176c0-.122-.067-.134-.256-.05c-.19.083-.256.068-.256-.055c0-.092.07-.204.153-.252c.134-.078.134-.113 0-.29a.782.782 0 0 1-.153-.39c0-.105-.04-.183-.091-.174c-.14.025-.443-.928-.317-.994c.057-.03.104-.197.104-.373c0-.211.014-.284.107-.295zm-16.39.129a.162.162 0 0 0-.094.025c-.034.023-.057.063-.057.12c0 .08.091.235.203.341c.112.107.205.24.205.3s.07.067.155.019c.111-.065.152-.013.152.191c0 .388.386.306.754-.162l.281-.36l-.28.106c-.34.13-.877-.06-1.013-.36a.371.371 0 0 0-.306-.22zm-3.334 1.135a.058.058 0 0 0-.045.02c-.067.081.173.59.65 1.384c.07.115.126.316.127.445c0 .13.048.255.105.282c.057.026.169.198.247.38c.078.183.233.346.345.364c.113.017.23.097.262.177c.101.272.183.127.111-.21c-.09-.425-.52-1.129-.715-1.172c-.081-.019-.148-.154-.148-.303a.663.663 0 0 0-.195-.44a1.008 1.008 0 0 1-.256-.355c-.088-.26-.364-.57-.488-.572zm19.455.574c.157-.028.03.371-.202.639c-.31.357-.508.428-.357.129c.144-.287.486-.755.559-.768zm-30.46 1.047c.056-.01.104.028.104.084c0 .055-.047.137-.103.183c-.057.047-.102.01-.102-.082c0-.091.046-.175.102-.185zm29.811.027l.344.229l.348.228l-.223.24c-.213.231-.214.25-.049.522c.108.177.132.29.06.303c-.041.007-.058.028-.058.048c-.003.004-.197.228-.213.243a2.008 2.008 0 0 0-.084.361c-.018.033-.036.056-.053.09c-.25.517-.248.515-1 .543c-.14.005-.335.015-.433.023a.167.167 0 0 1-.182-.17c-.079-.267-.185-.5-.24-.853c.008-.016.011-.026.021-.043c.068-.169.174-.273.256-.254c.077.017.198-.053.27-.156c.072-.104.192-.202.267-.215c.076-.014.188-.13.248-.258s.17-.244.247-.258c.075-.013.213-.16.306-.324zm-30.248.094c.04.003.084.016.131.039c.121.059.126.105.025.228c-.092.114-.127.123-.127.032c0-.072-.07-.083-.166-.028c-.112.066-.152.046-.12-.056c.03-.101.081-.167.148-.198a.214.214 0 0 1 .11-.017zm31.256.05c.06-.01.107.03.107.089c0 .058-.02.11-.045.115c-.024.004-.072-.035-.107-.088c-.034-.053-.014-.105.045-.115zm1.502.63c.07-.02.15.04.219.185l.117.25c-.07.096-.145.177-.2.27c-.01-.009-.264.03-.34-.272a.372.372 0 0 0 .054-.144c.023-.171.08-.27.15-.29zm5.139.11c.055-.01.101.032.101.09a.13.13 0 0 1-.101.126c-.057.01-.102-.03-.102-.088c0-.059.046-.117.102-.127zm-.76.03c.087-.015.132.025.097.09c-.034.065-.107.127-.16.137c-.053.01-.095-.033-.095-.092s.07-.12.158-.135zm-4.944.092c.061.015.063.097-.025.225c-.026.036-.033.063-.043.084l-.285.101c-.24.094-.532.142-.68.342c0 .054.091.055.203.004c.033-.015.035-.024.063-.04l.1-.03l.318-.01l-.018.027c-.033.028-.075.051-.103.082c-.15.163-.22.32-.172.379c.045.056.076.197.076.314c-.008.275-.333.404-.396.159c-.03-.118-.049-.075-.059.119c-.009.228-.055.304-.19.3c-.098-.002-.18-.1-.18-.216a.673.673 0 0 0-.075-.322c-.042-.061-.032-.249.025-.415c.044-.129.048-.17.06-.228c.028-.082.15-.43.15-.45l-.013.007a.559.559 0 0 1 .504-.207c.17.008.396-.051.504-.131a.564.564 0 0 1 .156-.086a.153.153 0 0 1 .08-.008zm-6.63.313h.004c.175 0 .432.083.69.24c.37.226.643.367.88.46c.194.262.22.462.516.436c.157-.091.443.085.443.276c0 .061.068.072.152.023c.085-.049.153-.033.153.04c0 .084-.087.123-.254.108c-.229-.019-.256.013-.256.292c0 .35.214.416 1.015.312c.25-.032.47-.007.493.057c.021.063.126.099.234.08c.124-.022.197.04.197.17c0 .177-.055.205-.433.222c-.239.011-.514-.007-.608-.04a1.043 1.043 0 0 0-.44-.014a1.1 1.1 0 0 1-.491-.038c-.322-.122-1.238-.896-1.397-1.18l-.135-.241l-.134-.227v-.008c-.002-.005-.018-.01-.018-.015v-.006c-.049-.073-.183-.159-.334-.198c-.313-.08-.498-.301-.498-.595c0-.06.03-.102.08-.127a.316.316 0 0 1 .14-.028zm7.824.566c.078.023.12.07.12.142c0 .115-1.078.38-1.18.29c-.12-.104-.002-.206.398-.34c.12-.041.228-.068.324-.086a.779.779 0 0 1 .338-.006zm-.871 1.289h.002c.1-.01.17.04.17.162c-.002.076-.178.254-.391.395c-.473.312-.525.325-.525.12c0-.088.039-.167.084-.175c.045-.008.186-.134.312-.28c.117-.134.246-.21.348-.222zm-.938.312c.345-.002.122.164-.615.327c-.572.126-.731.13-.697.017c.03-.101.27-.187.777-.28c.243-.043.42-.063.535-.064zm-20.463 1.75c-.153.028-.29.313-.191.399c.072.063.334-.195.334-.328c0-.052-.065-.084-.143-.07zm3.565 2.153c.085-.006.186.045.248.156c.13.233.137.644.014.99c-.052.145-.2.685-.329 1.2c-.189.754-.283.96-.476 1.072c-.354.204-.513.21-.615.02c-.2-.373-.225-.743-.073-1.079c.083-.187.126-.41.092-.496c-.122-.31.06-.71.424-.933c.195-.121.355-.294.355-.385c0-.092.044-.174.1-.184c.056-.01.104-.091.104-.18c0-.115.07-.175.156-.181zm-1.207.053c.019.014.03.046.03.091c0 .188-.062.227-.15.094c-.031-.049-.011-.128.046-.176c.028-.023.055-.024.074-.01zm.25.132h.002a.18.18 0 0 1 .105.047c.154.134.068.24-.123.15c-.083-.037-.114-.11-.072-.161c.02-.027.053-.037.088-.036zm2.433 1.686a.086.086 0 0 1 .104.088a.132.132 0 0 1-.104.125c-.056.01-.101-.03-.101-.088a.13.13 0 0 1 .101-.125zm18.684.303a.135.135 0 0 0-.107.127c0 .058.02.104.044.1c.025-.005.075-.065.11-.13c.034-.065.012-.108-.047-.097zm2.447 1.441c.192-.015.201.05.201.291c0 .33-.258.73-.498.773c-.068.013-.192-.132-.273-.322c-.233-.543-.202-.616.31-.705a3.04 3.04 0 0 1 .26-.037zM52.5 76.771v2.334a23.215 23.215 0 0 1 3.693-1.44c4.414-1.3 9.953-1.99 15.467-2.392A194.97 194.97 0 0 1 91 74.855v-2.6c-12.285-.277-28.268.165-38.5 4.516z" fill="#000000"></path><path d="M13.293 9.83c-2.573-.012-3.165.018-4.293.041v64.984a194.969 194.969 0 0 1 19.34.418c5.514.402 11.053 1.092 15.467 2.391a23.2 23.2 0 0 1 3.693 1.441V15.424c-.002-.206-.04-.445-.857-1.031c-.818-.587-2.299-1.25-4.182-1.8c-3.767-1.096-9.098-1.81-14.44-2.218c-5.342-.408-10.703-.527-14.728-.545zm23.951 2.676c.575-.013 1.239.001 2.004.049c1.841.114 3.136.757 4.177 1.05c2.421.68 3.08 1.213 3.247 1.333c.29.207.349.447.13.521c-.074.026-.023.057.112.07c.206.02.244.087.244.407c0 .265-.048.376-.162.369c-.113-.007-.166.105-.166.363c0 .204-.06.392-.135.418c-.108.037-.108.048 0 .062c.2.025.175.744-.027.809c-.23.074-.202.237.055.32c.226.074.296.363.111.465c-.059.033-.201.002-.318-.068c-.15-.09-.237-.094-.287-.016c-.04.062.03.145.156.186c.147.048.228.162.228.322c0 .325-.484.437-.756.174c-.17-.165-.206-.163-.386.025c-.195.204-.193.208.119.166c.437-.058.739.192.617.514l-.092.242l-.306-.3c-.484-.48-.471-.248.015.269c.241.256.428.464.414.463c-.013-.001.01.227.051.506l.076.505l-.42-.082c-.237-.046-.393-.038-.36.02c.034.056.183.11.33.12c.145.008.262.077.259.151c-.01.26-1.028.96-1.627 1.118c-.859.226-.906.253-1.111.668c-.232.468-.65.777-1.131.837c-.21.027-.37.114-.37.2c0 .083-.037.149-.081.146c-.045-.003-.094.173-.11.39c-.016.219-.076.453-.135.52c-.058.067-.074.156-.035.198c.04.042-.01.07-.107.064c-.113-.007-.155.05-.115.154c.034.092.004.408-.069.703c-.119.488-.16.535-.44.518c-.215-.013-.328-.086-.378-.246c-.05-.157-.148-.225-.317-.213a.548.548 0 0 1-.398-.158c-.218-.248-.738-1.34-.824-1.733a2.234 2.234 0 0 0-.23-.585c-.377-.605-.24-2.027.202-2.116c.113-.022.199-.18.227-.42c.038-.324.009-.39-.19-.441c-.18-.046-.223-.015-.183.139c.074.289-.446.368-.693.105c-.175-.185-.174-.218.02-.564c.189-.34.234-.361.609-.287l.406.078l-.264-.26c-.145-.144-.241-.292-.213-.33c.029-.038-.004-.023-.076.033c-.181.142-.52.106-.535-.059c-.026-.277.037-.574.148-.703c.08-.093.08-.207 0-.38c-.148-.32-.46-1.36-.46-1.534c0-.074-.077-.221-.169-.328a1.132 1.132 0 0 1-.214-.443c-.057-.3-.003-.247-.579-.573l-.468-.267l-.371.197c-.307.162-.43.171-.704.059c-.345-.142-.601-.494-.488-.67c.036-.057-.06-.157-.213-.225c-.35-.154-.354-.385-.015-.63l.261-.188l-.363-.22c-.801-.482-1.153-1.896 2.873-1.987zm-13.07.885c.404.019.68.054.613.078c-.066.023-.096.162-.068.31c.04.214-.009.288-.24.362c-.372.118-.351.123-.518-.12a.945.945 0 0 0-.332-.287c-.105-.045-.19-.15-.19-.23c0-.108.196-.14.735-.113zm2.828.162c.451.006.6.14.326.297c-.224.127-.72.084-.846-.075c-.149-.189-.05-.23.52-.222zm1.004.049c.364.022.448.061.398.187c-.041.105.004.162.133.17c.254.016.34.115.268.3c-.08.204-.478.156-.742-.09a3.725 3.725 0 0 1-.368-.398c-.137-.181-.11-.196.31-.17zm-2.375.127c.094-.088.42.286.445.513c.048.413-.213.357-.353-.076c-.072-.221-.113-.418-.092-.437zm-2.49.062c.045.016.092.074.166.184c.105.156.13.268.06.287c-.063.017-.091.149-.064.29c.027.143-.007.289-.073.325c-.065.036-.117.149-.115.25c.003.169.012.168.114 0c.117-.195.537-.233.537-.049c0 .06.075.113.168.12c.092.005.251.161.353.347c.11.2.274.342.402.35c.166.01.183-.013.069-.092c-.083-.058-.119-.153-.08-.213a.135.135 0 0 0-.04-.184c-.172-.117-.133-.327.112-.574c.231-.234.488-.19.387.066c-.032.08-.007.18.054.221c.062.042.087.145.055.227c-.04.102.025.152.207.164c.315.02.5.329.414.687c-.06.248-.054.252.102.06c.16-.195.164-.195.289.046c.07.135.1.248.068.254a6.678 6.678 0 0 1-.357.027c-.816.048-1.196.127-1.46.297c-.364.235-.69.216-.872-.049c-.078-.114-.302-.31-.496-.436c-.269-.173-.34-.28-.293-.445c.041-.147.028-.174-.037-.084c-.097.132-.46.046-.46-.11c0-.13.386-.415.547-.405c.114.007.12-.024.022-.127c-.097-.104-.183-.068-.361.148c-.16.193-.29.254-.41.195a1.058 1.058 0 0 0-.36-.091c-.296-.007-.32-.301-.045-.58a6.01 6.01 0 0 0 .514-.626c.15-.214.324-.344.422-.314c.091.028.23-.014.31-.094c.062-.062.105-.087.15-.072zm7.972.049c.29-.013.613-.01.912.004h.002c.6.028 1.104.105 1.069.209c-.025.073-.155.143-.29.154c-.16.014-.223.076-.183.182c.033.088-.025.245-.129.347c-.232.229-.286.442-.107.416c.073-.01.15.086.17.215c.025.17-.07.292-.338.442c-.427.237-.638.255-.557.048c.04-.103-.05-.146-.33-.156c-.212-.008-.385.025-.385.072c0 .048-.24.039-.537-.02c-.41-.079-.58-.066-.705.052c-.148.139-.125.177.217.361c.357.191.419.194.928.057c.444-.12.602-.12.857.002c.364.173.494.43.318.63c-.068.078-.098.24-.068.358s-.006.232-.08.256c-.176.057-2.228-.076-2.506-.162h-.002c-.376-.117-.488-.29-.49-.754c-.002-.735-.095-.952-.379-.899c-.188.036-.302-.032-.479-.29c-.345-.507-.302-.693.15-.665c.26.016.423.095.515.246c.089.149.208.207.36.178a.4.4 0 0 1 .378.143c.13.165.16.153.285-.137c.077-.178.212-.32.3-.314c.143.008.143-.03.007-.301c-.086-.17-.156-.34-.157-.377c0-.038.242-.133.538-.211a3.7 3.7 0 0 1 .716-.086zm-7.465.717c.115.005.227.095.227.209c0 .126-.118.121-.313-.014c-.102-.072-.109-.123-.025-.17a.209.209 0 0 1 .111-.025zm11.711.047c-.093-.006-.17.037-.17.097c0 .06.048.112.104.115c.056.004.13-.04.168-.097c.037-.058-.008-.11-.102-.115zm-7.902.382c.035.004.083.038.156.104c.145.128.182.325.166.908l-.02.744l-.43-.027c-.413-.026-.43-.042-.388-.332c.04-.273.017-.3-.222-.27c-.243.032-.26.009-.192-.258c.05-.192.037-.27-.039-.228c-.212.118-.492-.076-.508-.354c-.018-.314.186-.35.444-.076c.094.1.172.142.172.092c0-.189.445-.351.595-.217c.107.095.157.092.192-.01c.019-.055.04-.08.074-.076zm.805 1.135c.41.026.7.926.336 1.043c-.227.073-.19.09-.479-.236c-.219-.247-.238-.325-.13-.553c.068-.146.191-.259.273-.254zm-6.713.608c.188-.018.32-.016.426.007a.52.52 0 0 1 .261.147c.113.108.306.188.43.176c.155-.015.366.138.664.482c.24.277.434.548.434.604c0 .055.049.077.107.044c.058-.032.23.029.381.137c.258.185.275.186.275.01s.018-.176.272.006c.265.19.271.19.271-.078c0-.162.063-.271.153-.266c.083.005.178-.063.213-.15c.064-.165.561-.193.654-.037c.029.048-.004.287-.07.53a1.42 1.42 0 0 0 .005.868c.07.233.156.537.192.674c.036.137.122.254.193.26c.203.018.62.434.62.619c0 .092-.086.21-.19.261c-.105.052-.153.132-.11.178c.138.146-.148.363-.453.344c-.112-.037-.44-.153-.474-.156c-.003 0-.924.2-1.09.228a1.872 1.872 0 0 0-.357-.045c-.202-.075-.473.072-.59-.261c0-.068-.167-.188-.371-.268c-.335-.131-.5-.322-.5-.578c0-.05.136-.132.3-.182l.297-.09l-.34-.03c-.347-.031-.474-.188-.474-.59c0-.115-.05-.212-.11-.216c-.153-.01-.135-.373.028-.535c.112-.111.092-.116-.11-.025c-.134.06-.244.21-.244.33c0 .12-.084.24-.19.271a1.335 1.335 0 0 0-.372.202c-.163.13-.2.11-.35-.188c-.092-.183-.249-.37-.348-.414c-.126-.056-.157-.15-.107-.318c.04-.132.09-.372.115-.533c.025-.162.094-.385.155-.495c.07-.125.073-.328.013-.54c-.095-.339-.09-.341.39-.383zm7.049.773c.14-.006.315.03.525.105c.43.156.47.221.313.518c-.054.1-.152.314-.217.475c-.065.16-.187.288-.272.283c-.203-.013-.32.472-.18.744c.062.118.112.297.112.396c0 .1.099.313.219.473c.166.222.19.323.095.43c-.094.108-.083.142.053.15c.107.007.176.102.176.242c0 .197.026.214.17.104c.244-.188.506.123.506.603c0 .208.042.449.095.536c.055.09.097.106.098.037c0-.068.083-.308.184-.534c.276-.622.122-1.228-.32-1.255c-.368-.023-.766-.882-.69-1.487c.116-.932.442-1.36 1.008-1.324c.273.017.342.06.295.182c-.056.14-.026.142.248.017c.485-.221 1.44-.023 1.752.364c.134.166.246.352.248.412c.007.204.595.926.726.89c.072-.02.219.077.326.215c.108.138.262.309.342.381c.495.444.773.835.717 1.008c-.037.116-.005.194.082.201c.096.008.08.057-.047.146c-.251.176-.24.348.027.45c.12.045.22.125.22.18c0 .053.084.073.189.042c.104-.03.154-.019.109.028c-.044.046.115.276.354.511c.49.483.52.624.216.993c-.117.142-.215.32-.216.394c-.002.075-.053.133-.116.129c-.144-.009-.645-.577-.65-.736c-.002-.066-.051-.043-.11.052c-.128.213-.027.525.174.538c.354.022.62 1.316.29 1.406c-.074.02-.133-.017-.133-.082s-.043-.12-.094-.123c-.052-.004-.069.125-.04.283c.058.305.089.3-.6.058c-.135-.047-.247-.124-.247-.173c0-.05-.12-.128-.267-.174a.78.78 0 0 1-.399-.334c-.279-.54-.584-.714-.976-.559c-.295.117-.576-.193-.489-.537c.065-.256.118-.284.375-.217c.345.09.624-.023.514-.209c-.041-.07.025-.249.148-.398c.124-.15.225-.38.225-.51c0-.326-.561-.884-.809-.805c-.153.05-.183.01-.156-.199c.038-.284-.277-.845-.383-.681c-.036.056-.241.091-.455.078c-.466-.03-.598.064-.36.254c.133.105.172.308.163.812c-.016.814-.355 1.306-.826 1.201c-.254-.056-.241-.027.158.356c.239.23.472.42.518.424c.045.002.082.067.082.142c0 .076.1.205.222.29c.122.083.192.196.157.251c-.088.137-.567.099-.657-.053c-.046-.078-.155-.045-.31.09c-.21.184-.276.191-.531.057c-.287-.151-.368-.321-.22-.461c.042-.039.089-.178.106-.31l.033-.24l-.14.241c-.077.133-.298.326-.488.43c-.191.104-.348.252-.348.328c0 .076-.154.274-.342.44c-.606.534-.853 1.49-.422 1.63c.136.044.239.197.28.415c.053.286.116.35.37.375c.17.016.47.158.67.314c.563.438.856.586 1.198.607c.3.02.314.044.314.504c0 .36.069.567.27.807c.35.419.495.238.367-.455c-.086-.467-.07-.516.234-.781c.18-.156.325-.326.325-.377c-.002-.293-.244-.912-.381-.973c-.21-.094-.21-.408.002-.394c.134.008.159-.144.136-.834c-.022-.707-.001-.837.135-.791c.09.03.362.07.606.091c.338.03.51.115.728.364c.157.179.368.343.469.365c.133.028.192.16.21.478c.016.27.111.532.245.674c.206.22.228.221.379.055c.088-.097.192-.304.232-.461c.071-.278.397-.392.397-.139c0 .07.068.211.152.31c.085.1.259.5.387.89c.253.77.375.945.75 1.087c.135.052.3.217.365.366c.066.148.18.272.254.277c.17.01.265.627.117.766c-.076.07-.068.107.024.113c.1.006.104.06.015.22c-.135.245.072.547.387.567c.117.007.16.07.12.172c-.035.087-.02.16.03.164c.152.01.224.467.108.678c-.087.156-.15.17-.322.066c-.119-.071-.262-.102-.317-.072c-.054.03-.128.002-.166-.06c-.037-.064-.237-.126-.445-.14c-.331-.02-.374-.053-.34-.265c.021-.133.13-.42.24-.637c.225-.439.158-.634-.135-.388a1.276 1.276 0 0 1-.494.216c-.242.046-.278.088-.177.215c.1.128.074.155-.133.139a.989.989 0 0 1-.469-.192c-.241-.197-.606-.251-.606-.09c0 .06.153.12.34.132c.322.02.337.038.274.351c-.074.364.056.57.44.693c.148.049.26.023.296-.07c.084-.214.256-.169.336.088c.084.268-.085.442-.598.611c-.209.07-.456.186-.55.26c-.27.21-.427.145-.436-.182c-.005-.164-.033-.241-.062-.171c-.03.07-.22.17-.422.224c-.37.1-.636.51-.393.606c.167.066.156.248-.014.238c-.251-.015-.972.174-.912.238c.033.035-.063.296-.213.582c-.153.294-.243.61-.207.727c.047.15-.048.282-.347.488c-.716.492-1.014.766-1.014.934c0 .09.082.427.182.75c.149.481.156.614.04.746c-.076.088-.173.159-.214.156c-.109-.007-.55-.848-.55-1.049c0-.233-.094-.282-.82-.412c-.56-.1-.625-.091-.564.072c.076.201-.203.212-.847.032c-.234-.066-.423-.035-.668.107c-.31.18-.352.266-.418.9c-.079.754.018 1.166.36 1.528c.279.297 1.03.241 1.087-.08a.609.609 0 0 1 .213-.338c.182-.13.894-.135.894-.006c0 .083-.198.713-.337 1.074c-.087.223-.065.241.33.266c.697.043.77.112.77.75c0 .745.292 1.157.706.994a.671.671 0 0 1 .563.021c.25.111.324.094.517-.12c.232-.258 1.15-.502 1.15-.307c0 .057.096.079.214.048c.117-.03.325.013.46.094c.136.081.53.161.877.18c.535.028.679.081.946.342c.755.738 1.051.952 1.347.97c.532.033.997.357 1.203.838c.105.244.16.489.122.547c-.002.003.064.01.07.014l-.02.014l.711.242l.362.242c.198.133.59.287.87.342c.28.055.655.22.835.365c.18.145.425.287.545.316c.168.041.224.152.25.496c.028.39-.03.517-.463 1.016c-.405.466-.494.65-.494 1.006c0 .517-.164 1.02-.5 1.537c-.195.3-.335.386-.68.42c-.584.057-1.106.469-1.106.875c0 .31-.337.918-.73 1.31a5.72 5.72 0 0 0-.461.553c-.215.296-.306.339-.605.285c-.352-.063-.41.016-.229.317c.222.37-.36.864-.97.826c-.204-.013-.285.062-.358.332c-.079.29-.141.34-.383.309c-.16-.022-.289.006-.289.062s.067.106.15.111c.252.016.296.333.063.444c-.118.055-.213.183-.213.283c0 .1-.134.286-.299.412l-.3.23l.253.231c.285.26.256.522-.091.814c-.119.1-.215.233-.215.291c0 .06-.085.163-.188.231c-.158.106-.164.17-.053.422c.073.163.131.384.131.49c0 .219.433.694.643.707c.076.005.117.07.092.143c-.044.13-.815.139-1.366.017c-.166-.036-.24-.115-.216-.234c.02-.099-.059-.236-.174-.303a.845.845 0 0 1-.291-.289c-.167-.34-.344-1.413-.303-1.838c.03-.32.006-.425-.096-.392c-.085.027-.138-.047-.138-.196c0-.148.082-.256.217-.283c.12-.024.218-.13.218-.238c0-.108.03-.273.067-.365c.044-.114.005-.172-.121-.18c-.143-.009-.172-.07-.12-.252c.038-.132.098-.557.131-.943c.034-.387.155-.928.27-1.202c.115-.273.207-.706.207-.964c0-.259.076-.85.166-1.313a10.2 10.2 0 0 0 .162-1.605c0-.657-.035-.792-.246-.98c-.135-.122-.285-.224-.336-.23c-.307-.03-.768-.597-1.162-1.43c-.244-.513-.538-1.027-.654-1.14c-.213-.205-.284-.612-.131-.756c.045-.042.082-.23.082-.42v-.343l.162-.237c0-.045.135-.218.299-.384c.164-.167.283-.405.267-.528c-.094-.744-.154-.938-.299-.947a.15.15 0 0 0-.158.154c0 .183-.277.204-.38.03a.3.3 0 0 0-.217-.121c-.201-.013-.915-.521-.926-.659c-.019-.242-.409-.58-.871-.755c-.27-.102-.63-.307-.801-.458c-.238-.209-.392-.263-.656-.23c-.26.033-.56-.068-1.21-.404c-1.04-.539-1.268-.74-1.189-1.05c.043-.168-.063-.367-.408-.753c-.734-.823-1.272-1.542-1.389-1.857c-.059-.16-.16-.294-.22-.297c-.177-.011-.13.154.134.478c.135.165.367.542.516.838c.15.296.335.58.41.633a.347.347 0 0 1 .135.252c0 .087-.06.153-.135.146c-.201-.017-.76-.571-.687-.683c.034-.053-.096-.217-.291-.364a16.766 16.766 0 0 1-.407-.312c-.028-.024.02-.083.106-.13c.134-.076.129-.12-.037-.298c-.107-.114-.309-.433-.447-.71c-.143-.287-.386-.582-.563-.68c-.376-.21-.468-.332-.918-1.237c-.335-.672-.35-.755-.363-2.07c-.012-1.214-.037-1.39-.221-1.535c-.635-.504-.84-.769-.71-.916c.1-.116.086-.215-.065-.46c-.107-.17-.258-.352-.338-.405c-.08-.053-.147-.216-.147-.364a.736.736 0 0 0-.219-.468c-.12-.11-.216-.263-.216-.338c0-.188-.344-.599-.451-.54c-.048.027-.118-.08-.157-.234c-.043-.176-.144-.283-.273-.29c-.113-.008-.43-.2-.705-.427c-.347-.286-.613-.419-.873-.435c-.213-.013-.561-.154-.807-.324c-.238-.166-.434-.255-.434-.2c0 .056.062.127.137.157c.107.042.106.088-.008.218c-.079.091-.212.137-.295.1c-.082-.037-.262.003-.398.09c-.402.256-.561.192-.482-.197l.068-.338l-.219.263c-.12.146-.19.339-.156.43c.034.091.011.195-.053.23a.242.242 0 0 0-.115.196c.002.071.054.046.115-.055c.061-.1.179-.179.262-.174c.272.017.122.51-.24.791l-.35.274l.031-.383c.034-.426.063-.435-.72.232c-.246.21-.487.354-.535.32c-.05-.032-.088.02-.088.116c0 .097-.049.144-.106.105c-.057-.038-.277-.007-.49.069c-.462.164-.547.168-.547.035c0-.105.764-.613.908-.604c.148.01.75-.6.809-.818c.047-.176.025-.196-.139-.119c-.144.068-.213.047-.258-.072c-.043-.116-.156-.15-.386-.118c-.298.042-.321.024-.278-.212c.041-.223.005-.26-.25-.274c-.233-.011-.297-.066-.3-.254c-.002-.131-.12-.348-.262-.48c-.233-.217-.246-.266-.117-.498c.142-.258.876-.763 1.087-.75c.14.008.147-.282.01-.375a.12.12 0 0 0-.17.037c-.038.06-.128.068-.199.017a.766.766 0 0 0-.29-.113a14.31 14.31 0 0 1-.337-.049c-.184-.028-.426-.473-.426-.785c0-.201.516-.53.805-.512c.096.006.174.085.174.174c0 .09.072.169.162.174c.09.006.166-.086.166-.207c0-.12-.048-.22-.105-.225c-.058-.003-.324-.234-.592-.511c-.37-.382-.474-.559-.428-.733c.043-.162.146-.225.354-.213c.236.015.33-.06.482-.394c.18-.398.845-.894 1.113-.83c.065.015.206-.063.313-.174c.172-.18.227-.184.48-.041c.157.089.42.202.584.252c.165.05.301.139.301.197c0 .059.149.116.33.127c.181.011.504.104.719.207c.215.103.578.2.806.215c.229.014.442.07.475.125c.033.055.226.143.428.193c.202.05.453.194.56.319c.28.327.49.302 1.237-.15c.467-.284.728-.378.884-.319c.145.055.213.04.194-.047c-.017-.073.031-.15.107-.174c.08-.024.21.136.317.387l.181.428l.112-.291c.13-.341.239-.37.314-.076c.039.151.125.2.314.175c.151-.02.496.1.819.282c.306.173.676.32.82.33a.679.679 0 0 1 .379.148l.203.32c.013.03-.046.102-.144.17c-.167.117-.14.137.226.162c.229.017.507-.015.62-.068c.136-.064.226-.058.27.018c.038.062.14.117.227.123c.242-.162.54-.524 1.248-.14c.11.006.227.058.26.114c.034.056.229.109.434.116c.298.01.381-.038.42-.237c.03-.16-.004-.252-.1-.258c-.194-.012-.19-.037.088-.492l.238-.386l.358.412c.227.261.386.37.433.297c.042-.065-.053-.236-.209-.38c-.226-.208-.28-.352-.275-.728c.004-.258.077-.575.164-.703c.117-.171.14-.39.086-.83c-.11-.88.007-1.279.428-1.295zm-1.567.215c.115-.011.269-.01.467 0l.414.02l-.06.38c-.041.252-.01.437.09.543c.213.227.142.791-.13 1.027c-.317.277-.487.237-.656-.154c-.08-.184-.196-.338-.26-.342c-.16-.01-.403-.367-.408-.597c-.004-.22.219-.239.41-.035c.168.178.168.041 0-.274c-.208-.392-.212-.536.133-.568zm5.78 4.48a.3.3 0 0 1 .162 0c.145.037.205.148.205.38c0 .273-.05.326-.301.339c-.25.013-.298-.025-.297-.236c.002-.268.087-.44.23-.483zm-10.706.553a.13.13 0 0 0-.1.012c-.072.04-.061.098.034.166c.094.066.11.132.041.18c-.21.144-.408.436-.299.443c.061.004.138-.06.17-.143c.032-.082.208-.172.39-.201c.422-.066.545-.241.186-.264c-.15-.009-.302-.067-.34-.13a.142.142 0 0 0-.082-.063zm10.297 2.223c.084.005.18.086.215.177c.063.168-.153.221-.293.073c-.122-.13-.082-.26.078-.25zm-.984.28c.172.048.172.07.014.286c-.166.225-.487.307-.487.125c0-.198.3-.457.473-.41zm-20.318.028c.202.013.27.066.244.196c-.039.197-.18.253-.389.156c-.25-.116-.146-.37.145-.352zm12.818.12c-.055-.036-.219.044-.367.177c-.317.283-.14.342.22.072c.137-.101.202-.214.147-.25zm8.105.2c.154.01.195.068.153.23c-.065.243-.186.34-.29.231c-.155-.164-.063-.473.137-.46zm-20.89 2.434c.05 0 .097.013.137.04c.058.04.017.132-.092.208c-.254.177-.36.172-.36-.017c0-.13.166-.232.315-.23zm8.16.475c.163.01.23.083.236.258c.005.135.03.357.055.494c.055.298.023.305-.201.043a1.459 1.459 0 0 1-.244-.506c-.064-.26-.042-.301.154-.29zm8.258.95c-.098-.004-.093.028.021.108c.09.064.125.116.076.114c-.048-.002-.055.049-.015.115c.102.172.198.047.12-.158c-.035-.095-.126-.174-.202-.178zm2.566 2.06c-.12-.003-.235.036-.388.117c-.334.176-.422.396-.116.289c.375-.131.58-.154.563-.06c-.04.208.018.278.181.226a.959.959 0 0 1 .272-.049c.177.011.105-.293-.092-.39c-.176-.088-.3-.13-.42-.133zm1.014.957c-.017.024.027.132.125.373c.099.241.192.44.207.441c.015.002.027-.134.027-.299c0-.177-.084-.357-.207-.441a1.068 1.068 0 0 0-.113-.072c-.02-.01-.033-.01-.04-.002zm-.596.044a.181.181 0 0 0-.066.012c-.173.056-.28.369-.282.822c0 .178.045.28.108.245c.06-.034.08-.182.043-.33h-.002a.69.69 0 0 1 .11-.53c.103-.15.132-.213.09-.219zm1.16.024c-.06-.004-.08.045-.043.107c.037.062.118.116.178.12c.06.003.078-.044.041-.106s-.116-.117-.176-.121zm.653 5.635c.154-.007.34.11.34.26c0 .083-.025.15-.055.148c-.03-.002-.055-.053-.055-.113c0-.06-.107-.115-.238-.123c-.165-.01-.206-.047-.13-.12a.216.216 0 0 1 .138-.052zm-19.57.043c.06.003.107.055.107.115a.1.1 0 0 1-.108.101a.118.118 0 0 1-.109-.115c0-.06.05-.105.11-.101zm.277.125c.193.012.92.584.92.724c0 .04-.077.096-.168.125c-.11.036-.2-.037-.266-.213c-.055-.146-.2-.305-.322-.351c-.198-.075-.325-.295-.164-.285zm19.33.27a.111.111 0 0 1 .094.019c.131.09.13.385-.002.377c-.057-.004-.133-.06-.17-.121c-.067-.112-.011-.249.076-.274zm-.969.45c.127.007.29.048.55.127c.337.102.612.217.612.254c0 .038.27.204.6.37c.499.25.597.345.597.576c0 .236-.049.273-.336.255c-.184-.011-.356-.042-.38-.068c-.103-.109-.034-.229.125-.219c.093.006.138-.041.101-.103c-.037-.062-.233-.122-.435-.135c-.236-.015-.42-.1-.51-.236c-.19-.283-.842-.468-.97-.276c-.078.115-.114.114-.186-.004c-.054-.086-.172-.119-.288-.082c-.3.097-.153-.209.182-.377a.62.62 0 0 1 .338-.082zm1.979.221c.09.006.164.055.164.111c0 .137-.171.226-.258.133c-.123-.13-.075-.254.094-.244zm.193.438c.13.021.105.169-.035.207c-.072.019-.112-.022-.088-.092c.024-.07.08-.123.123-.115zm.543.367c.27.017.732.324.732.488c0 .057-.137.094-.304.084c-.168-.01-.356.029-.416.086c-.061.057-.145.067-.186.023c-.04-.043-.074-.217-.074-.386c0-.249.048-.308.248-.295zm-1.563.242a.459.459 0 0 1 .172.039c.09.04.164.124.164.186c0 .144-.508.112-.597-.038c-.064-.107.088-.192.261-.187zm2.649.174c.134.027.244.098.244.158s-.11.118-.244.129c-.169.013-.244-.038-.244-.16c0-.123.075-.162.244-.127zm2.299 24.494c.231.014.23.314-.002.346c-.17.022-.46.676-.69 1.556c-.306 1.929-.165 3.136.454 4.076c1.105 1.25 7.04 2.474 8.525 4.825c-3.827-1.247-15.09-3.03-19.07-3.422l-.069-.514c-.049-.359-.029-.539.066-.594c.092-.052.057-.082-.107-.093c-.135-.01-.252-.055-.258-.1c-.106-.77-.063-.914.317-1.049c.208-.074.555-.104.771-.066c.216.037.447.027.514-.024c.082-.062.169.022.263.256c.135.334.157.346.64.309c.818-.064 1.239-.016 1.784.203c.752.302 1.923.338 1.754.055c-.033-.056.066-.094.22-.084c.156.01.31.083.339.162c.03.079.16.157.293.175a.598.598 0 0 1 .361.21c.192.274.234.216.162-.229c-.047-.294-.126-.426-.281-.463c-.233-.055-.488-.339-.488-.543c0-.07.11-.17.244-.225l.246-.1l-.274-.124c-.235-.11-.246-.135-.082-.192c.136-.046.172-.139.125-.328c-.048-.194-.012-.28.137-.326a1.01 1.01 0 0 0 .365-.232c.09-.094.264-.218.387-.276c.182-.085.247-.064.356.116c.13.218.133.217.36.02c.199-.173.221-.277.16-.749c-.064-.48-.044-.56.15-.652c.12-.058.22-.166.22-.242c0-.077.097-.239.217-.36c.12-.12.219-.247.219-.28c0-.098.426-.467.533-.46c.055.003.117-.032.137-.078c.06-.138.81-.516 1.002-.504zm-16.477 5.592l1.027.406c.768.303 1.129.396 1.418.36c.235-.03.391-.006.391.06c0 .06.211.152.469.207c.281.06.552.2.68.353l.244.022c.02-.143.138-.252.304-.283c.344-.065.512.047.446.299c-.03.108.004.316.072.347c-3.278-.38-5.426-.616-8.444-.42c.09-.053.598-.306.833-.293c.25.015.61-.07.875-.209c.246-.129.63-.257.853-.285c.238-.03.495-.158.62-.308z" fill="#000000"></path></g></svg>
+            </div>
+            <h3 id="custom-itineraries" class="text-2xl font-semibold mb-2">Custom Itineraries</h3>
+            <p class="text-gray-400 mb-6">Customized routes and curated experiences crafted to match your unique travel goals, interests, and comfort level.</p>
+            <ul class="text-gray-500 text-sm">
+              <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Tailored experiences</li>
+              <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Local insights</li>
+              <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Flexible scheduling</li>
+              <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>24/7 support</li>
+              <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-joinround" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Solo, couple, or group options</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Service Card 2: Trekking Adventures -->
+        <div class="swiper-slide">
+          <div class="service-card bg-gray-800 rounded-2xl p-8 text-center shadow-lg" style="--delay:0.3s" role="region" aria-labelledby="trekking-adventures">
+            <div class="icon-container mx-auto mb-6 w-20 h-20 rounded-full bg-gradient-to-br from-green-400 to-teal-500 flex items-center justify-center">
+<svg width="64px" height="64px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000" stroke="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M75.637204 137.053486l20.249921-5.399978A10.799958 10.799958 0 0 1 108.712074 137.053486L321.336239 988.900138a10.799958 10.799958 0 0 1-7.424971 12.82495l-20.249921 5.399978a10.799958 10.799958 0 0 1-12.824949-7.42497L68.887231 148.528441A10.799958 10.799958 0 0 1 75.637204 137.053486z" fill="#000000"></path><path d="M290.961358 1024a27.674891 27.674891 0 0 1-26.324897-19.574923L51.3373 152.578425a27.674891 27.674891 0 0 1 20.24992-33.07487l20.249921-5.399979a26.999894 26.999894 0 0 1 20.924917 0 26.999894 26.999894 0 0 1 12.82495 16.199937V137.053486l211.949167 847.796668A27.674891 27.674891 0 0 1 321.336239 1014.550037l-20.249921 5.399979zM86.437162 150.553433l209.249177 838.346705h8.099969L94.53713 148.528441z" fill="#000000"></path><path d="M91.162143 193.078266L707.434721 19.603948a10.799958 10.799958 0 0 1 13.499947 12.149952 193.049241 193.049241 0 0 0 26.324896 122.849517c20.924918 41.849836 90.449644 97.874615 153.899396 190.349252a550.797835 550.797835 0 0 1 53.32479 120.149528 10.799958 10.799958 0 0 1-6.749974 13.499947l-742.497081 182.249283a10.799958 10.799958 0 0 1-12.82495-7.42497L83.737173 204.553221a10.799958 10.799958 0 0 1 7.42497-11.474955z" fill="#000000"></path><path d="M203.211703 677.051364A27.674891 27.674891 0 0 1 186.336769 677.051364a26.999894 26.999894 0 0 1-12.149952-16.874934L67.537236 209.9532a27.674891 27.674891 0 0 1 18.899926-33.07487L702.70974 2.054017a27.674891 27.674891 0 0 1 20.924917 0 27.674891 27.674891 0 0 1 13.499947 29.699883 178.1993 178.1993 0 0 0 24.974902 112.04956 382.048498 382.048498 0 0 0 54.674785 67.499734 1106.320651 1106.320651 0 0 1 97.874615 120.149528 556.197814 556.197814 0 0 1 55.349783 124.199512 27.674891 27.674891 0 0 1-16.874934 35.099862L209.961676 677.051364zM101.287104 204.553221l106.64958 438.073278L935.583824 463.752202a512.322986 512.322986 0 0 0-48.599809-110.024567A1086.745728 1086.745728 0 0 0 793.834381 236.953094a395.548445 395.548445 0 0 1-59.399766-75.599703A219.374138 219.374138 0 0 1 702.70974 38.503874z" fill="#000000"></path><path d="M432.035803 463.752202A134.999469 134.999469 0 0 1 330.786201 407.052425a123.524514 123.524514 0 0 1 16.874934-134.999469 181.574286 181.574286 0 0 1 91.799639-60.749762 202.499204 202.499204 0 0 1 104.624589 11.474955A120.824525 120.824525 0 0 1 620.360063 339.55269a143.099438 143.099438 0 0 1-59.399766 94.499629l4.724981 21.599915a5.399979 5.399979 0 0 1-4.049984 6.074976L523.835443 457.002229a5.399979 5.399979 0 0 0-5.399979 0 28.349889 28.349889 0 0 1-15.524939 17.549931 35.099862 35.099862 0 0 1-26.999894-6.749974 5.399979 5.399979 0 0 0-6.074976 0l-25.649899 17.549931a5.399979 5.399979 0 0 1-7.424971 0z" fill="#E6E9ED"></path><path d="M477.935623 379.377534l20.24992 24.299904a5.399979 5.399979 0 0 1 0 7.424971l-27.674891 6.074976a5.399979 5.399979 0 0 1-6.074976-6.074976l7.424971-31.049878a5.399979 5.399979 0 0 1 6.074976-4.049984z" fill="#000000"></path><path d="M403.130089 325.073702m-65.769721 15.184137a67.499735 67.499735 0 1 0 131.539441-30.368273 67.499735 67.499735 0 1 0-131.539441 30.368273Z" fill="#000000"></path><path d="M522.719172 306.0992m-65.769721 15.184136a67.499735 67.499735 0 1 0 131.539442-30.368273 67.499735 67.499735 0 1 0-131.539442 30.368273Z" fill="#000000"></path></g></svg>
+            </div>
+            <h3 id="trekking-adventures" class="text-2xl font-semibold mb-2">Trekking Adventures</h3>
+            <p class="text-gray-400 mb-6">Trek the Himalayas with seasoned guides — safe, supported, and suited to your pace and experience level.</p>
+            <ul class="text-gray-500 text-sm">
+              <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-joinround" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Certified trek leaders</li>
+              <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-joinround" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Safety first</li>
+              <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-joinround" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Local support teams</li>
+              <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-joinround" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>All skill levels</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Service Card 3: Cultural Experiences -->
+        <div class="swiper-slide">
+          <div class="service-card bg-gray-800 rounded-2xl p-8 text-center shadow-lg" style="--delay:0.4s" role="region" aria-labelledby="cultural-experiences">
+            <div class="icon-container mx-auto mb-6 w-20 h-20 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
+              <svg fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 241 260" enable-background="new 0 0 241 260" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <polygon points="227.822,63.335 215.884,64.816 195.815,80.809 197.159,87.984 179.343,90.9 171.988,87.529 170.643,79.845 163.422,80.02 165.128,93.27 146.79,93.703 121.821,86.002 100.271,74.179 106.398,62.15 90.884,51.603 89.61,41.434 93.782,43.975 98.261,41.155 93.118,31.532 102.741,22.739 104.772,15.626 97.113,12.953 82.998,15.439 68.397,2 52.291,3.126 47.145,9.69 58.727,18.336 55.858,21.297 52.997,21.914 52.814,35.434 63.024,41.67 34.41,80.535 22.268,79.373 14.591,89.807 26.46,109.512 17.324,113.75 7.186,112.018 2.289,116.552 10.581,125.209 9.784,132.863 23.954,145.028 24.25,144.8 37.85,140.7 39.582,147.898 39.855,169.221 58.216,223.805 62.682,232.394 68.741,252.441 73.594,258 82.205,257.339 83.845,251.986 98.311,235.424 98.311,233.897 98.015,226.243 98.357,225.15 102.366,211.822 101.957,211.572 102.116,211.185 102.366,211.822 102.207,211.048 100.157,197.766 101.957,191.866 134.397,168.287 140.16,160.633 143.737,154.984 153.578,152.455 162.076,137.579 167.497,134.252 175.448,136.394 168.5,105.412 168.181,93.908 177.999,95.798 179.594,102.428 184.265,104.774 200.826,105.002 199.186,109.284 200.621,116.712 204.198,130.198 210.167,121.153 208.959,113.112 214.745,113.727 218.96,99.625 222.879,88.44 234.451,81.128 238.711,74.794 "></polygon> </g></svg>
+            </div>
+            <h3 id="cultural-experiences" class="text-2xl font-semibold mb-2">Cultural Experiences</h3>
+            <p class="text-gray-400 mb-6">Immerse in local traditions, cuisine, and art — experience the rhythm of rural life, the flavors of authentic dishes, and the stories etched in every craft.</p>
+            <ul class="text-gray-500 text-sm">
+              <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-joinround" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Storytelling evenings</li>
+              <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-joinround" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Culinary tours</li>
+              <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-joinround" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Spiritual site visits</li>
+              <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-joinround" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Traditional music & dance</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Service Card 4: Luxury Accommodations -->
+        <div class="swiper-slide">
+          <div class="service-card bg-gray-800 rounded-2xl p-8 text-center shadow-lg" style="--delay:0.5s" role="region" aria-labelledby="luxury-accommodations">
+            <div class="icon-container mx-auto mb-6 w-20 h-20 rounded-full bg-gradient-to-br from-red-400 to-yellow-500 flex items-center justify-center">
+            <svg width="64px" height="64px" viewBox="-2.56 -2.56 69.12 69.12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--emojione-monotone" preserveAspectRatio="xMidYMid meet" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M63 60h-6V41.758c3.656 1.955 3.766 5.918 3.766 5.918c.697-5.52-1.842-7.643-3.823-8.463a5.888 5.888 0 0 0-.128-.666C60.835 35.27 64 36.633 64 36.633c-3.598-4.347-6.668-2.432-8.414-.492A5.983 5.983 0 0 0 51 34h-5v-8c0-3.308-2.691-6-6-6h-1v-6c0-1.077-.531-2.36-1.293-3.121l-1.586-1.587C35.36 8.532 34.076 8 33 8V6.558c2.666 1.533 3.332-1.534 6 0V1.443c-2.668-1.533-3.334 1.534-6 0V1c0-.55-.451-1-1-1c-.551 0-1 .45-1 1v7c-1.076 0-2.36.532-3.121 1.292l-1.586 1.587C25.531 11.64 25 12.923 25 14v6h-1c-3.309 0-6 2.692-6 6v8h-5a5.99 5.99 0 0 0-4.588 2.141c-1.744-1.94-4.815-3.856-8.412.492c0 0 3.164-1.363 7.186 1.916a5.811 5.811 0 0 0-.128.664c-1.981.82-4.521 2.943-3.823 8.463c0 0 .109-3.965 3.766-5.918V60H1c-.551 0-1 .451-1 1v2c0 .551.449 1 1 1h62c.549 0 1-.449 1-1v-2c0-.549-.451-1-1-1m-8.972-18.961c.167-.047.316-.102.493-.143c.336.063.646.145.947.234c.075.635.159 1.443.234 2.449h-1.727c.027-.821.044-1.673.053-2.54m-.061 2.889c.757.959 1.393.625 1.774.215c.057.836.104 1.781.139 2.834h-2.055c.056-.979.105-1.989.142-3.049M53 41.365a.13.13 0 0 0 .025-.01c-.025 1.818-.09 3.537-.177 5.15A.988.988 0 0 0 52 46h-3.639c.23-.936.75-2.023 1.832-3H52c.549 0 1-.449 1-1v-.635m-42 .002V42c0 .551.449 1 1 1h1.807c1.081.977 1.601 2.064 1.831 3H12a.989.989 0 0 0-.849.504c-.088-1.611-.151-3.33-.177-5.148l.026.011m-2.469-.236c.3-.09.61-.172.945-.234c.178.043.327.096.495.143c.01.867.026 1.719.051 2.541H8.296c.076-1.007.159-1.815.235-2.45m-.273 3.012c.383.41 1.019.744 1.775-.217c.035 1.061.084 2.07.142 3.051H8.117c.035-1.053.084-1.998.141-2.834m-.156 3.326c.434.424 1.187.828 2.098-.047c.063 1.037.135 2.018.213 2.949H8.07c-.002-1.035.008-2.008.032-2.902m-.03 3.367c.462.467 1.322.947 2.356-.266c.1 1.158.206 2.227.313 3.197H8.136a115.904 115.904 0 0 1-.064-2.931m.075 3.217c.43.451 1.414 1.174 2.647.182c.068.596.138 1.139.205 1.652V56c0 .078.027.148.045.223c.046.336.088.648.132.941H8.303a118.62 118.62 0 0 1-.156-3.111M8.512 60c-.078-.914-.143-1.795-.198-2.652c.382.443 1.497 1.441 2.91.139c.24 1.613.419 2.513.419 2.513H8.512M22 48.063L20.764 49l.469-1.525L20 46.529l1.525-.006L22 45l.475 1.523l1.525.006l-1.232.945l.468 1.526L22 48.063M24 63l1.333-1h13.334L40 63H24m4.236-14L27 48.063L25.764 49l.469-1.525L25 46.529l1.525-.006L27 45l.475 1.523l1.525.006l-1.232.945l.468 1.526M28 50v10h-3V50h3m5.236-1L32 48.063L30.764 49l.469-1.525L30 46.529l1.525-.006L32 45l.475 1.523l1.525.006l-1.232.945l.468 1.526M33 50v10h-2V50h2m5.236-1L37 48.063L35.764 49l.469-1.525L35 46.529l1.525-.006L37 45l.475 1.523l1.525.006l-1.232.945l.468 1.526M39 50v10h-3V50h3m1.764-1l.469-1.525L40 46.529l1.525-.006L42 45l.475 1.523l1.525.006l-1.232.945l.468 1.526L42 48.063L40.764 49M52 53h-4c-.551 0-1 .451-1 1v2c0 .551.449 1 1 1h3.833a62.876 62.876 0 0 1-.458 2.805l-.04.195H43V50h2v-6H19v6h2v10h-8.338l-.039-.195A61.86 61.86 0 0 1 12.166 57H16c.549 0 1-.449 1-1v-2c0-.549-.451-1-1-1h-4a.945.945 0 0 0-.324.066a122.284 122.284 0 0 1-.31-3.311A.98.98 0 0 0 12 50h4c.549 0 1-.449 1-1v-2c0-.414-.258-.771-.618-.922c.177-1.191.021-2.213-.352-3.084c.534-.017.97-.455.97-.994v-2c0-.549-.451-1-1-1h-4a.959.959 0 0 0-.409.094c-.11-.047-.222-.096-.327-.139c4.877-4.582 8.736-1.15 8.736-1.15A8.378 8.378 0 0 0 18.179 36H20V26c0-2.2 1.799-4 4-4h3v-8c0-.55.318-1.318.707-1.708l1.586-1.585C29.682 10.318 30.449 10 31 10h2c.549 0 1.318.318 1.707.708l1.586 1.585c.389.389.707 1.157.707 1.707v8h3c2.199 0 4 1.8 4 4v10h1.82A8.353 8.353 0 0 0 44 37.805s3.858-3.432 8.734 1.15c-.105.043-.217.092-.326.139A.95.95 0 0 0 52 39h-4c-.551 0-1 .451-1 1v2a1 1 0 0 0 .969.994c-.373.871-.528 1.893-.353 3.084c-.36.151-.616.508-.616.922v2c0 .551.449 1 1 1h4a.985.985 0 0 0 .633-.244a127.106 127.106 0 0 1-.309 3.311A.933.933 0 0 0 52 53m3.486 7h-3.131s.179-.9.418-2.512c1.414 1.301 2.528.303 2.911-.141c-.055.858-.12 1.739-.198 2.653m.209-2.836h-2.873l.129-.926c.021-.078.049-.154.049-.238v-.123c.067-.51.136-1.051.205-1.645c1.232.994 2.216.271 2.646-.18c-.037.993-.087 2.026-.156 3.112m.167-3.396h-2.606c.109-.971.216-2.039.314-3.199c1.033 1.213 1.894.736 2.355.27c-.006.923-.028 1.899-.063 2.929m-2.276-3.397c.078-.932.151-1.912.215-2.951c.909.875 1.663.473 2.096.051c.023.893.033 1.865.03 2.9h-2.341" fill="#000000"></path><path d="M21.119 42.422v-2.027h1.836v2.027h1.111V37.58h-1.111v1.859h-1.836V37.58H20v4.842z" fill="#000000"></path><path d="M27.943 37.5c-1.455 0-2.398 1.086-2.398 2.535c0 1.381.855 2.465 2.318 2.465c1.44 0 2.422-.963 2.422-2.549c0-1.338-.828-2.451-2.342-2.451m-.021 4.131c-.746 0-1.199-.668-1.199-1.617c0-.939.438-1.645 1.191-1.645c.771 0 1.193.748 1.193 1.617c0 .942-.431 1.645-1.185 1.645" fill="#000000"></path><path d="M31.17 38.498h1.324v3.924h1.117v-3.924h1.348v-.918H31.17z" fill="#000000"></path><path d="M37.404 40.373h1.813v-.891h-1.813v-1.003h1.922v-.899h-3.045v4.842h3.147v-.899h-2.024z" fill="#000000"></path><path d="M42.039 37.58H40.92v4.842H44v-.92h-1.961z" fill="#000000"></path><path d="M34 24h-4c-.551 0-1 .45-1 1v8c0 .551.449 1 1 1h4c.549 0 1-.449 1-1v-8c0-.55-.451-1-1-1" fill="#000000"></path><path d="M30 20c.549 0 1-.45 1-1v-4c0-.55-.451-1-1-1c-.551 0-1 .45-1 1v4c0 .55.449 1 1 1" fill="#000000"></path><path d="M34 14c-.551 0-1 .45-1 1v4c0 .55.449 1 1 1c.549 0 1-.45 1-1v-4c0-.55-.451-1-1-1" fill="#000000"></path><path d="M23 28h3c.549 0 1-.449 1-1v-2c0-.55-.451-1-1-1h-3c-.551 0-1 .45-1 1v2c0 .55.449 1 1 1" fill="#000000"></path><path d="M27 33v-2c0-.549-.451-1-1-1h-3c-.551 0-1 .451-1 1v2c0 .551.449 1 1 1h3c.549 0 1-.449 1-1" fill="#000000"></path><path d="M38 28h3c.549 0 1-.449 1-1v-2c0-.55-.451-1-1-1h-3c-.551 0-1 .45-1 1v2c0 .55.449 1 1 1" fill="#000000"></path><path d="M38 34h3c.549 0 1-.449 1-1v-2c0-.549-.451-1-1-1h-3c-.551 0-1 .451-1 1v2c0 .551.449 1 1 1" fill="#000000"></path></g></svg>
+            </div>
+            <h3 id="luxury-accommodations" class="text-2xl font-semibold mb-2">Luxury Accommodations</h3>
+            <p class="text-gray-400 mb-6">Stay in elegant hotels with premium amenities — from scenic mountain lodges to boutique retreats that offer comfort, privacy, and style.</p>
+            <ul class="text-gray-500 text-sm">
+              <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-joinround" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Premium locations</li>
+              <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-joinround" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Personalized service</li>
+              <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-joinround" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Unique amenities</li>
+              <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-joinround" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Mountain-view suites</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Service Card 5: Expert Guides -->
+        <div class="swiper-slide">
+          <div class="service-card bg-gray-800 rounded-2xl p-8 text-center shadow-lg" style="--delay:0.6s" role="region" aria-labelledby="expert-guides">
+            <div class="icon-container mx-auto mb-6 w-20 h-20 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center">
+            <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 521.577 521.577" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <circle cx="302.284" cy="50.174" r="50.174"></circle> <path d="M109.399,156.519l-8.683,83.939c-1.09,10.595,6.608,20.091,17.222,21.171c0.669,0.086,1.348,0.114,2.008,0.114 c9.764,0,18.14-7.392,19.173-17.317l7.545-72.885l23.849-10.71c0,0,18.178,29.338,34.578,33.928l11.102-37.389l-1.434-16.409 c-3.28-14.583-4.293-28.248-3.739-40.612l-90.317,40.545C114.429,143.724,110.107,149.672,109.399,156.519z"></path> <path d="M250.054,432.454c3.118,12.212,14.104,20.35,26.153,20.35c2.219,0,4.466-0.269,6.694-0.842l49.208-12.546 c7.335-1.865,13.541-6.713,17.117-13.368c3.586-6.646,4.217-14.507,1.75-21.649l-37.811-109.138 c-9.533,10.739-25.168,15.884-39.617,11.724c-20.463-5.919-32.273-27.377-26.354-47.812l10.308-35.649 c-13.626-15.673-24.537-32.866-32.474-51.169c-1.128-2.592-2.075-5.135-3.041-7.688l-34.272,117.36l-25.723,55.463 c-2.467,5.308-3.136,11.265-1.922,16.974l30.877,145.694c2.687,12.708,13.913,21.42,26.412,21.42c1.845,0,3.739-0.201,5.623-0.593 c14.592-3.089,23.925-17.433,20.827-32.035l-29.022-136.867l23.285-50.175l25.178,14.344l27.053,78.068l-20.732,5.288 C255.103,403.279,246.363,417.986,250.054,432.454z"></path> <path d="M371.345,266.535l-7.727-32.809c-1.894-8.071-7.392-14.822-14.918-18.312c-0.048-0.019-0.669-0.334-1.597-0.822 c4.045-7.009,7.469-14.296,10.185-21.802l23.026,26.517l-3.223,11.733c0.01,0.038,0.019,0.067,0.038,0.105l7.717,32.799 c0.593,2.572,0.928,5.136,0.995,7.689c0.028,0.009,0.066,0.019,0.096,0.028c1.721,0.478,3.433,0.698,5.125,0.698 c8.473,0,16.237-5.623,18.599-14.182l10.615-38.594c1.702-6.225,0.2-12.89-4.045-17.767l-49.151-56.61 c2.725-33.469-2.057-64.795-5.651-82.104c-5.192,23.858-24.184,42.61-48.176,47.401c1.434,22.003,0.22,47.985-9.047,69.137 c-7.965-9.266-15.539-20.349-21.219-33.44c-6.981-16.123-9.027-29.759-8.884-40.545c-19.737-10.308-33.258-30.954-33.258-54.726 c0-3.194,0.315-6.311,0.784-9.371c-0.669,0.536-1.301,1.128-1.941,1.711l0.01-0.009c-67.97,11.733-75.467,69.969-75.467,69.969 l57.308-25.819l0.048-0.125c-3.271,21.707-1.625,49.391,11.81,80.392c9.371,21.63,22.166,39.063,35.238,53.101 c-0.804,1.549-1.473,3.175-1.97,4.877l-10.605,36.663c-4.16,14.334,4.112,29.31,18.436,33.469c2.516,0.727,5.03,1.071,7.526,1.071 c11.724,0,22.51-7.698,25.934-19.508l5.689-19.67c0.028,0.019,0.067,0.048,0.096,0.067l4.982,21.171 c2.926,12.44,14.019,20.837,26.268,20.837c2.056,0,4.141-0.229,6.206-0.727C365.76,295.605,374.759,281.07,371.345,266.535z"></path> </g> </g> </g></svg>
+            </div>
+            <h3 id="expert-guides" class="text-2xl font-semibold mb-2">Expert Guides</h3>
+            <p class="text-gray-400 mb-6">Certified professionals with deep local knowledge, cultural insights, and a passion for creating meaningful travel experiences.</p>
+            <ul class="text-gray-500 text-sm">
+              <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-joinround" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Local expertise</li>
+              <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-joinround" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Safety certified</li>
+              <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-joinround" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Storytellers</li>
+              <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-joinround" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Great with groups & families</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Service Card 6: Group Tours -->
+        <div class="swiper-slide">
+          <div class="service-card bg-gray-800 rounded-2xl p-8 text-center shadow-lg" style="--delay:0.7s" role="region" aria-labelledby="group-tours">
+            <div class="icon-container mx-auto mb-6 w-20 h-20 rounded-full bg-gradient-to-br from-green-400 to-yellow-500 flex items-center justify-center">
+              <svg fill="#000000" width="82px" height="82px" viewBox="-3 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>group</title> <path d="M20.906 20.75c1.313 0.719 2.063 2 1.969 3.281-0.063 0.781-0.094 0.813-1.094 0.938-0.625 0.094-4.563 0.125-8.625 0.125-4.594 0-9.406-0.094-9.75-0.188-1.375-0.344-0.625-2.844 1.188-4.031 1.406-0.906 4.281-2.281 5.063-2.438 1.063-0.219 1.188-0.875 0-3-0.281-0.469-0.594-1.906-0.625-3.406-0.031-2.438 0.438-4.094 2.563-4.906 0.438-0.156 0.875-0.219 1.281-0.219 1.406 0 2.719 0.781 3.25 1.938 0.781 1.531 0.469 5.625-0.344 7.094-0.938 1.656-0.844 2.188 0.188 2.469 0.688 0.188 2.813 1.188 4.938 2.344zM3.906 19.813c-0.5 0.344-0.969 0.781-1.344 1.219-1.188 0-2.094-0.031-2.188-0.063-0.781-0.188-0.344-1.625 0.688-2.25 0.781-0.5 2.375-1.281 2.813-1.375 0.563-0.125 0.688-0.469 0-1.656-0.156-0.25-0.344-1.063-0.344-1.906-0.031-1.375 0.25-2.313 1.438-2.719 1-0.375 2.125 0.094 2.531 0.938 0.406 0.875 0.188 3.125-0.25 3.938-0.5 0.969-0.406 1.219 0.156 1.375 0.125 0.031 0.375 0.156 0.719 0.313-1.375 0.563-3.25 1.594-4.219 2.188zM24.469 18.625c0.75 0.406 1.156 1.094 1.094 1.813-0.031 0.438-0.031 0.469-0.594 0.531-0.156 0.031-0.875 0.063-1.813 0.063-0.406-0.531-0.969-1.031-1.656-1.375-1.281-0.75-2.844-1.563-4-2.063 0.313-0.125 0.594-0.219 0.719-0.25 0.594-0.125 0.688-0.469 0-1.656-0.125-0.25-0.344-1.063-0.344-1.906-0.031-1.375 0.219-2.313 1.406-2.719 1.031-0.375 2.156 0.094 2.531 0.938 0.406 0.875 0.25 3.125-0.188 3.938-0.5 0.969-0.438 1.219 0.094 1.375 0.375 0.125 1.563 0.688 2.75 1.313z"></path> </g></svg>
+            </div>
+            <h3 id="group-tours" class="text-2xl font-semibold mb-2">Group Tours</h3>
+            <p class="text-gray-400 mb-6">Join like-minded adventurers for shared experiences, new friendships, and unforgettable journeys led by experienced guides.</p>
+            <ul class="text-gray-500 text-sm">
+              <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-joinround" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Small groups</li>
+              <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-joinround" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Community vibe</li>
+              <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-joinround" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Guided journeys</li>
+              <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-joinround" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Pre-planned itineraries</li>
+              <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-joinround" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Great for solo travelers</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Service Card 7: Jeep Safari -->
+<div class="swiper-slide">
+  <div class="service-card bg-gray-800 rounded-2xl p-8 text-center shadow-lg" style="--delay:0.8s" role="region" aria-labelledby="Jeep-safari">
+    <div class="icon-container mx-auto mb-6 w-20 h-20 rounded-full bg-gradient-to-br from-red-400 to-purple-500 flex items-center justify-center">
+     <svg fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2500 2500" xml:space="preserve" width="64px" height="64px"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M2106.7,1448.9c121.2,0,220.1,98.9,220.1,220.1c0,121.2-98.9,220.1-220.1,220.1c-121.2,0-220.1-98.9-220.1-220.1 C1886.6,1547.8,1985.5,1448.9,2106.7,1448.9L2106.7,1448.9z M392.5,1448.9c121.2,0,220.1,98.9,220.1,220.1 c0,121.2-98.9,220.1-220.1,220.1c-121.3,0-220.1-98.9-220.1-220.1C172.3,1547.8,271.2,1448.9,392.5,1448.9L392.5,1448.9z M726.2,1496.9c27.3,0.1,49.5,22.2,49.5,49.5v564.8c-0.1,27.3-22.2,49.5-49.5,49.6c-27.3-0.1-49.5-22.2-49.6-49.6v-564.8 C676.7,1519.1,698.8,1497,726.2,1496.9z M899.6,1496.9c27.3,0.1,49.5,22.2,49.5,49.5v564.8c-0.1,27.3-22.2,49.5-49.5,49.6 c-27.3-0.1-49.5-22.2-49.6-49.6v-564.8C850.1,1519.1,872.2,1497,899.6,1496.9z M1073,1496.9c27.3,0.1,49.5,22.2,49.6,49.5v564.8 c-0.1,27.3-22.2,49.5-49.6,49.6c-27.3-0.1-49.5-22.2-49.6-49.6v-564.8C1023.5,1519.1,1045.6,1497,1073,1496.9z M1246.4,1496.9 c27.3,0.1,49.5,22.2,49.5,49.5v564.8c-0.1,27.3-22.2,49.5-49.5,49.6c-27.3-0.1-49.5-22.2-49.6-49.6v-564.8 C1196.9,1519.1,1219.1,1497,1246.4,1496.9z M1419.8,1496.9c27.3,0.1,49.5,22.2,49.6,49.5v564.8c-0.1,27.3-22.2,49.5-49.6,49.6 c-27.3-0.1-49.5-22.2-49.6-49.6v-564.8C1370.3,1519.1,1392.5,1497,1419.8,1496.9z M1593.2,1496.9c27.3,0.1,49.5,22.2,49.6,49.5 v564.8c-0.1,27.3-22.2,49.5-49.6,49.6c-27.3-0.1-49.5-22.2-49.6-49.6v-564.8C1543.7,1519.1,1565.9,1497,1593.2,1496.9z M1766.6,1496.9c27.3,0.1,49.5,22.2,49.6,49.5v564.8c-0.1,27.3-22.2,49.5-49.6,49.6c-27.3-0.1-49.5-22.2-49.6-49.6v-564.8 C1717.1,1519.1,1739.3,1497,1766.6,1496.9z"></path> <g> <path d="M1484.8,790c-23.4,0-42.7,7.8-57.9,23.4c-15.2,15.5-22.8,36.6-22.5,63.4h160c-0.8-28.4-8.7-50-23.9-64.7 C1525.2,797.4,1506.7,790,1484.8,790z"></path> <path d="M1922.7,795.4c-57.5,0-78.8,67.1-77.4,109.8c2,58,24.2,119.9,79.5,119.9c27.7,0,36.7-7.1,55.1-25.4 c18.4-18.2,27.7-48.2,27.7-89.7c0-38.9-9.6-67.7-28.6-86.5C1960.1,804.8,1950.7,795.4,1922.7,795.4z"></path> <path d="M1045.8,789.8c-23.4,0-42.7,7.8-57.9,23.4c-15.2,15.5-22.7,36.6-22.5,63.4h160v0c-0.8-28.4-8.7-49.9-23.9-64.7 C1086.2,797.2,1067.6,789.8,1045.8,789.8z"></path> <path d="M2424.6,436.4H75.4C33.8,436.5,0.1,470.2,0,511.8v1090.3c40.2-154.6,178.2-269.5,307.1-269.5h1874.2 c129.7,0,276.9,116.4,318.7,272.4V511.8C2499.9,470.2,2466.2,436.5,2424.6,436.4z M793.8,912.1c0,141.5-63.5,200.7-192.5,203.3 c-125.9,2.5-171.5-102.5-171.8-215.5h127.8c2.5,51.8-13.9,103,59.1,101.5c45.5-1,52-21.5,52-82.6V579.4h0h125.4V912.1z M1242.5,939.7H969.8c0.8,29,9.5,51.6,26.3,67.7c16.8,16.2,37.8,24.3,62.8,24.3c20.3,0,61.7-12.6,69.3-36.6h108.5 c-29.7,75.8-106.3,116-179,116c-111.4,0-207.3-67.1-207.3-196.8c0-61.4,17.9-109.4,53.5-144.1c35.6-34.7,88.4-52.1,142.9-52.1 C1173.4,718,1245.2,801.8,1242.5,939.7z M1681.6,939.9h-272.7c0.8,29,9.5,51.6,26.3,67.7c16.8,16.2,37.8,24.3,62.8,24.3 c20.3,0,61.7-12.6,69.3-36.6h108.5c-29.7,75.8-106.3,116-179,116c-111.4,0-207.2-67.1-207.2-196.8c0-61.4,17.9-109.4,53.5-144.2 c35.6-34.7,88.4-52.1,142.9-52.1C1612.5,718.2,1684.2,801.9,1681.6,939.9z M1966.8,1110.8c-46.6,0-82.7-23.9-117.2-58v186.5 l-116.2-2V726.4l0,0l105.1-2v54.4c29.2-42.7,75.7-66.8,123-66.8c99.3,0,163.2,87,163.2,197.4 C2124.7,1034.9,2068,1110.8,1966.8,1110.8z"></path> </g> </g> </g></svg>
+    </div>
+    <h3 id="geep-safari" class="text-2xl font-semibold mb-2">Jeep Safari</h3>
+    <p class="text-gray-400 mb-6">Embark on thrilling off-road adventures through rugged terrains, guided by experts in iconic Jeep vehicles.</p>
+    <ul class="text-gray-500 text-sm">
+      <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Off-road exploration</li>
+      <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Expert drivers</li>
+      <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Scenic routes</li>
+      <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Safe and sturdy vehicles</li>
+      <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Group or solo options</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Service Card 8: Religious Tours -->
+<div class="swiper-slide">
+  <div class="service-card bg-gray-800 rounded-2xl p-8 text-center shadow-lg" style="--delay:0.9s" role="region" aria-labelledby="religious-tour">
+    <div class="icon-container mx-auto mb-6 w-20 h-20 rounded-full bg-gradient-to-br from-blue-400 to-yellow-500 flex items-center justify-center">
+      <svg fill="#000000" height="64px" width="64px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M503.983,453.211h-9.086v-26.188c0-4.427-3.589-8.017-8.017-8.017h-77.495v-35.273h26.188 c3.635,0,6.815-2.446,7.748-5.959c0.933-3.513-0.615-7.215-3.77-9.018l-55.82-31.896v-26.232l31.856-31.856 c2.293-2.293,2.979-5.741,1.738-8.736c-0.803-1.938-2.314-3.428-4.156-4.247l0.005-0.011l-72.2-32.09v-25.675l31.856-31.856 c2.293-2.293,2.979-5.741,1.738-8.736c-0.98-2.368-3.017-4.065-5.427-4.681l0.004-0.018 c-0.699-0.178-66.992-17.686-101.122-72.801c7.794-4.27,13.092-12.55,13.092-22.046c0-13.851-11.268-25.119-25.119-25.119 s-25.119,11.268-25.119,25.119c0,9.495,5.296,17.775,13.089,22.044c-34.06,54.954-100.427,72.624-101.119,72.802l0.004,0.018 c-2.409,0.616-4.446,2.314-5.427,4.681c-1.241,2.996-0.555,6.443,1.738,8.736l31.857,31.857v25.675l-72.199,32.088l0.005,0.011 c-1.842,0.819-3.353,2.309-4.156,4.247c-1.241,2.996-0.555,6.443,1.738,8.736l31.856,31.857v26.232l-55.819,31.897 c-3.156,1.803-4.703,5.505-3.77,9.018c0.932,3.513,4.112,5.959,7.747,5.959h26.188v35.273H25.119 c-4.427,0-8.017,3.589-8.017,8.017v26.188H8.017C3.589,453.211,0,456.8,0,461.228c0,4.427,3.589,8.017,8.017,8.017h495.967 c4.427,0,8.017-3.589,8.017-8.017C512,456.8,508.411,453.211,503.983,453.211z M329.64,196.676h-39.97v-18.171h58.141 L329.64,196.676z M324.944,212.71v18.171H289.67V212.71H324.944z M256,58.789c5.01,0,9.086,4.076,9.086,9.086 c0,5.01-4.076,9.086-9.086,9.086s-9.086-4.076-9.086-9.086S250.99,58.789,256,58.789z M256,100.919 c19.546,30.287,47.3,49.732,69.947,61.553H186.053C208.7,150.651,236.454,131.206,256,100.919z M273.637,178.505v60.927h-35.273 v-60.927H273.637z M164.188,178.505h58.141v18.171h-39.97L164.188,178.505z M222.33,212.71v18.171h-35.273V212.71H222.33z M180.741,246.914h41.589v0.534c0,4.427,3.589,8.017,8.017,8.017h51.307c4.427,0,8.017-3.589,8.017-8.017v-0.534h41.589 l40.885,18.171H139.856L180.741,246.914z M121.433,281.119h269.135l-18.171,18.171H139.604L121.433,281.119z M367.699,315.324 v18.171H144.301v-18.171H367.699z M138.413,349.528h235.175l31.8,18.171H106.614L138.413,349.528z M213.779,453.211H33.136V435.04 h180.643V453.211z M282.188,427.023v26.188h-18.171v-43.29c0-4.427-3.589-8.017-8.017-8.017s-8.017,3.589-8.017,8.017v43.29 h-18.171v-26.188c0-4.427-3.589-8.017-8.017-8.017h-34.739v-9.086c0-4.427-3.589-8.017-8.017-8.017s-8.017,3.589-8.017,8.017 v9.086h-52.376v-35.273h274.706v35.273h-52.376v-9.086c0-4.427-3.589-8.017-8.017-8.017s-8.017,3.589-8.017,8.017v9.086h-34.739 C285.777,419.006,282.188,422.596,282.188,427.023z M478.864,453.211H298.221V435.04h180.643V453.211z"></path> </g> </g> </g></svg>
+    </div>
+    <h3 id="religious-tour" class="text-2xl font-semibold mb-2">Religious Tours</h3>
+    <p class="text-gray-400 mb-6">Discover spiritual serenity with guided tours to sacred sites, offering cultural insights and peaceful reflection.</p>
+    <ul class="text-gray-500 text-sm">
+      <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Sacred destinations</li>
+      <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Knowledgeable guides</li>
+      <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Cultural immersion</li>
+      <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Respectful itineraries</li>
+      <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Group or private tours</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Service Card 9: Camping & Equipments -->
+<div class="swiper-slide">
+  <div class="service-card bg-gray-800 rounded-2xl p-8 text-center shadow-lg" style="--delay:1.0s" role="region" aria-labelledby="camping-equipments">
+    <div class="icon-container mx-auto mb-6 w-20 h-20 rounded-full bg-gradient-to-br from-red-400 to-yellow-500 flex items-center justify-center">
+      <svg fill="#000000" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title></title> <g data-name="Calque 2" id="Calque_2"> <path d="M67.75,66.15A1.49,1.49,0,0,0,67.59,65l-4.52-7.84a1.35,1.35,0,0,0-.26-.32,14.34,14.34,0,0,0,1.65-6.69c0-7.34-3.95-13.06-7.43-18.11-2.85-4.12-5.53-8-5.53-12a1.5,1.5,0,0,0-3,0c0,4-2.68,7.91-5.53,12-3.48,5-7.43,10.77-7.43,18.11a14.34,14.34,0,0,0,1.65,6.69,1.35,1.35,0,0,0-.26.32L32.41,65a1.48,1.48,0,0,0,.54,2L38,70l-5,2.89a1.56,1.56,0,0,0-.7.91,1.52,1.52,0,0,0,.16,1.14l4.52,7.83a1.5,1.5,0,0,0,1.3.75,1.48,1.48,0,0,0,.75-.2l11-6.36,11,6.36a1.48,1.48,0,0,0,.75.2,1.5,1.5,0,0,0,1.3-.75l4.52-7.83a1.52,1.52,0,0,0,.16-1.14,1.56,1.56,0,0,0-.7-.91L62,70l5-2.89A1.5,1.5,0,0,0,67.75,66.15ZM59,71.68l5.21,3-3,5.23L53,75.17ZM38.78,79.92l-3-5.23L61.22,60l3,5.24Zm6.47-20.14A5.9,5.9,0,0,1,44,56.18c0-3.49,2-6.34,3.87-9.1.75-1.09,1.49-2.16,2.1-3.25.61,1.09,1.35,2.16,2.1,3.25C54,49.84,56,52.69,56,56.18a5.9,5.9,0,0,1-1.22,3.6,1.41,1.41,0,0,0-.28.64L50,63l-4.47-2.58A1.41,1.41,0,0,0,45.25,59.78Zm-6.47.2L47,64.73l-6,3.49-5.21-3Zm6.66-26.22A51,51,0,0,0,50,26.3a51,51,0,0,0,4.56,7.46c3.39,4.92,6.9,10,6.9,16.41a11.37,11.37,0,0,1-2.34,6.92,1.51,1.51,0,0,0-.31.82h0A9.17,9.17,0,0,0,59,56.18c0-4.43-2.34-7.81-4.4-10.8C52.92,43,51.5,40.93,51.5,38.81a1.5,1.5,0,0,0-3,0c0,2.12-1.42,4.18-3.07,6.57-2.06,3-4.4,6.37-4.4,10.8a9.17,9.17,0,0,0,.18,1.74h0a1.51,1.51,0,0,0-.31-.82,11.37,11.37,0,0,1-2.34-6.92C38.54,43.77,42.05,38.68,45.44,33.76Z"></path> </g> </g></svg>
+        </div>
+    <h3 id="camping-equipments" class="text-2xl font-semibold mb-2">Camping & Equipments</h3>
+    <p class="text-gray-400 mb-6">Experience nature with premium camping gear and guided setups, perfect for adventurers of all levels.</p>
+    <ul class="text-gray-500 text-sm">
+      <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>High-quality gear</li>
+      <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Guided setups</li>
+      <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Scenic campsites</li>
+      <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Rental options</li>
+      <li><svg class="inline-block w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Suitable for all skill levels</li>
+    </ul>
+  </div>
+</div>
+      </div>
+      <!-- Swiper Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Swiper Navigation Buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+      <!-- DESTINATIONS -->
+<section
+  id="destinations"
+  class="destinations-section py-16 bg-gray-900 text-white"
+  x-data="destinationHandler()"
+>
+  <div class="container mx-auto px-4">
+    <div class="destinations-wrapper">
+      <h2 class="text-4xl font-bold text-center mb-4">Destinations</h2>
+      <p class="destinations-subheading text-center mb-12 max-w-2xl mx-auto">
+        Discover India’s diverse wonders—from Himalayan peaks and desert valleys to coastal paradises—through our curated roadmaps.
+      </p>
+
+      <!-- Filters -->
+      <div class="destinations-filters flex justify-center gap-4 mb-12">
+        <template x-for="(destination, index) in destinations" :key="index">
+          <button
+            @click="activeDestination = index;
+                    $nextTick(() => $refs.roadmap.scrollIntoView({ behavior: 'smooth' }))"
+            :class="{
+              'bg-blue-600': activeDestination === index,
+              'bg-gray-700': activeDestination !== index
+            }"
+            class="rounded-lg px-6 py-3 hover:bg-blue-600 transition text-white"
+          >
+            <span x-text="destination.name"></span>
+          </button>
+        </template>
+      </div>
+
+      <template x-if="activeDestination !== null">
+        <!-- add x-ref here so we can scroll to it -->
+        <div x-ref="roadmap" class="roadmap-container">
+          <h3
+            class="text-2xl font-bold mb-6 text-center"
+            x-text="destinations[activeDestination].name + ' Roadmap'"
+          ></h3>
+          <div class="timeline-wrapper">
+            <div class="timeline">
+              <template
+                x-for="(step, idx) in destinations[activeDestination].roadmap"
+                :key="idx"
+              >
+                <div
+                  class="timeline-item"
+                  :class="idx % 2 === 0 ? 'dest-left' : 'dest-right'"
+                >
+                  <div class="timeline-content">
+                    <div class="timeline-image-wrapper">
+                      <div class="timeline-image hexagon">
+                        <img
+                          :src="step.image"
+                          alt="Step Image"
+                        >
+                      </div>
+                    </div>
+                    <div class="timeline-text-wrapper">
+                      <div class="timeline-text">
+                        <h4 class="text-xl font-semibold" x-text="step.title"></h4>
+                        <p class="text-gray-300" x-text="step.description"></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+</section>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adventure Booking</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Include intl-tel-input CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+</head>
+<body>
+  <!-- Booking Modal -->
+  <div id="booking-modal" class="hidden">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close">×</button>
+      <h2>Book Your Adventure</h2>
+      <form
+        action="https://formsubmit.co/13f6d3d9bd157a3c9c0b3960120eab42"
+        method="POST"
+        class="booking-form"
+        id="bookingForm"
+        onsubmit="return validateForm(event)"
+      >
+        <input type="hidden" name="_captcha" value="false"/>
+        <input type="hidden" name="_subject" value="New Adventure Booking Request"/>
+        <input type="hidden" name="_honeypot" value=""/> <!-- Added honeypot field -->
+
+        <div class="form-group">
+          <input 
+            type="text" 
+            name="Full Name" 
+            id="name" 
+            required 
+            placeholder=" " 
+            maxlength="100"
+            pattern="[A-Za-z\s]{1,100}"
+            oninput="sanitizeInput(this)"
+          />
+          <label for="name">Full Name</label>
+        </div>
+        <div class="form-group">
+          <input 
+            type="email" 
+            name="Email Address" 
+            id="email" 
+            required 
+            placeholder=" " 
+            maxlength="100"
+            oninput="sanitizeInput(this)"
+          />
+          <label for="email">Email Address</label>
+        </div>
+        <div class="form-group phone-group">
+          <input 
+            type="tel" 
+            name="Phone Number" 
+            id="phone" 
+            required 
+            placeholder=" "
+            maxlength="20"
+          />
+          <input 
+            type="hidden" 
+            name="Phone Number Full" 
+            id="phone-full"
+          />
+          <label for="phone">Phone Number</label>
+          <span id="phone-error" class="error-message hidden">Please enter a valid phone number</span>
+        </div>
+        <div class="form-group">
+          <input 
+            type="date" 
+            name="Tour Date" 
+            id="tour_date" 
+            required 
+            min="2025-04-28"
+          />
+          <label for="tour_date">Preferred Tour Date</label>
+        </div>
+        <div class="form-group">
+          <input 
+            type="number" 
+            name="Number of People" 
+            id="people" 
+            min="1" 
+            max="100"
+            required 
+            placeholder=" "
+          />
+          <label for="people">Number of People</label>
+        </div>
+        <div class="form-group">
+          <textarea 
+            name="Special Request" 
+            id="special_requests" 
+            placeholder=" "
+            maxlength="500"
+            oninput="sanitizeInput(this)"
+          ></textarea>
+          <label for="special_requests">Special Requests</label>
+        </div>
+
+        <button type="submit" class="btn-gradient submit-btn">Submit Booking</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+<!-- Footer -->
+<footer id="contact-us">
+  <div class="footer-container">
+      <!-- Left: Address and Contact Info -->
+      <div class="footer-info">
+          <h3>Contact Us</h3>
+          <p><strong>Address:</strong> Jubbarhatti, Syri(IN)</p>
+          <p><strong>Landline:</strong> 0179-2288420</p>
+          <p><strong>Phone:</strong> +91 98165-42000</p>
+          <p><strong>Email:</strong> abcholidaysshimla@gmail.com</p>
+      </div>
+
+      <!-- Center: Get in Touch Section -->
+      <div class="inquiry">
+        <h3>Get in Touch</h3>
+        <form
+          action="https://formsubmit.co/13f6d3d9bd157a3c9c0b3960120eab42"
+          method="POST"
+          class="inquiry-form"
+          id="inquiryForm"
+          onsubmit="return validateInquiryForm(event)"
+        >
+          <input type="hidden" name="_captcha" value="false"/>
+          <input type="hidden" name="_subject" value="New Inquiry"/>
+          <input type="hidden" name="_honeypot" value=""/>
+
+          <div class="form-group">
+            <input 
+              type="text" 
+              name="Full Name" 
+              id="inquiry-name" 
+              placeholder="Your Full Name" 
+              required 
+              maxlength="100"
+              pattern="[A-Za-z\s]{1,100}"
+              oninput="sanitizeInput(this)"
+            />
+            <label for="inquiry-name" class="visually-hidden">Your Name</label>
+          </div>
+          <div class="form-group">
+            <input 
+              type="email" 
+              name="Email Address" 
+              id="inquiry-email" 
+              placeholder="Your Email" 
+              required 
+              maxlength="100"
+              oninput="sanitizeInput(this)"
+            />
+            <label for="inquiry-email" class="visually-hidden">Your Email</label>
+          </div>
+          <div class="form-group">
+            <textarea 
+              name="Message" 
+              id="inquiry-message" 
+              placeholder="Your Message" 
+              required 
+              maxlength="500"
+              oninput="sanitizeInput(this)"
+            ></textarea>
+            <label for="inquiry-message" class="visually-hidden">Your Message</label>
+          </div>
+          <button type="submit" class="btn-gradient submit-btn">Send Inquiry</button>
+        </form>
+      </div>
+
+      <!-- Right: Google Map -->
+      <div class="footer-map">
+          <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3431.3522190564337!2d77.046905!3d31.0799112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39057b73e04acda7%3A0x477b2f44d49408ca!2sSyri%2C%20Himachal%20Pradesh%20173207!5e0!3m2!1sen!2sin!4v1700000000000"
+              width="100%" 
+              height="300" 
+              style="border:0; border-radius:10px;"
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+      </div>
+  </div>
+
+  <!-- Copyright Message -->
+  <p class="footer-copyright">© 2025 Epic Himalaya. All Rights Reserved.</p>
+</footer>
+
+<!-- Whats APP Icon-->
+<a href="https://wa.me/+919816542000?text=Hello%20I%20have%20a%20query" class="whatsapp-float" target="_blank" aria-label="Chat with us on WhatsApp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon">
+  <span class="tooltip">Chat with us!</span>
+</a>
+
+
+<!-- Scroll to Top Button HTML -->
+<a href="#top" class="scroll-to-top" aria-label="Scroll to top of the page">
+  <img src="/assets/up.svg" alt="Up Arrow">
+  <span class="tooltip">Back to Top</span>
+</a>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <!-- Custom JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>
